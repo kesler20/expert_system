@@ -1,0 +1,15 @@
+.containter_simulation > div{
+    border: 1px
+}
+.containter_simulation{
+    display:flex;
+    justify-content: space-between;
+}
+.right_sim{
+    width: 410px;
+    height: 300x;
+}
+.left_sim{
+    width: 410px;
+    height: 300px;
+}

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Equipment - Expert System</title>
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Expert System</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Homepage</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../information/" class="nav-link">Information</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../chemicals/" class="nav-link">Chemicals</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Equipment</a>
+                            </li>
+                            <li class="navitem">
+                              <a href="../Explosions/" class="nav-link">Explosions</a>
+                          </li>
+                            <li class="navitem">
+                                <a href="../data/" class="nav-link">Data</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../help/" class="nav-link">Help</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../chemicals/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../data/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/harryhitchman/ExpertSystem/edit/master/docs/equipment.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#equipment-hub" class="nav-link">Equipment Hub</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#vessels" class="nav-link">Vessels:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ambient" class="nav-link">Ambient</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pressurised" class="nav-link">Pressurised</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#refrigerated" class="nav-link">Refrigerated</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#components" class="nav-link">Components:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#compressors" class="nav-link">Compressors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#flanges-and-gaskets" class="nav-link">Flanges and Gaskets</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#hose-and-couplings" class="nav-link">Hose and Couplings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pipework" class="nav-link">Pipework</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pumps" class="nav-link">Pumps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tankers" class="nav-link">Tankers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#valves" class="nav-link">Valves</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="equipment-hub"><strong>Equipment Hub</strong></h1>
+<hr />
+<p>The Equipment Hub provides recommended safeguards and design rules for the equipment items within the Expert System workbook. The risk-reduction measures can be implemented into the design to improve the tolerability of the identified hazardous scenario. Moreover, additional resources (e.g. codes and standard) are also provided to the user for further reading.</p>
+<hr />
+<div id='main-section'>
+  <h1 id="vessels"><strong>Vessels:</strong></h1>
+  <hr />
+  <div id='section-one'><h2 id="ambient">Ambient</h2>
+    <a class='general-btns'>
+      <button type="button" class='btn'>
+        Add Equipment
+      </button>
+      <button type="button" class='btn'>Delete Equipment</button>
+    </a>
+  </div>
+  <hr />
+  <div id='section-two'>
+    <a class='general-btns'>
+      <button type="button" class='btn'>Edit subtitle</button>
+      <button type="button" class='btn'>Edit Description</button>
+    </a>
+    <h4 id="ambient-temperature-and-pressure-vessel">Ambient Temperature and Pressure Vessel</h4>
+    <p><strong>Description:</strong>
+    Small and Medium Atmospheric Tanks (SMATs) have a capacity of less than 450 m³, can be of either plastic or steel, and operate at ambient temperature and pressure conditions.</p>
+  </div>
+  <div id='section-three'>
+    <a class='general-btns'>
+      <button type="button" class='btn'>Edit Table</button>
+    </a>
+    <table id='table-body'>
+    <thead>
+    <tr>
+    <th>Recommendations</th>
+    <th>Safeguarding</th>
+    <th>Notes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Flame Arrestor Vent</td>
+    <td>Overpressure</td>
+    <td>Simple design similar to a free vent to atmosphere. Prevents external ignition sources from igniting flammable vapours in the tank.</td>
+    </tr>
+    <tr>
+    <td>Continuous Venting via Control Valve</td>
+    <td>Overpressure</td>
+    <td>Can be routed to a closed system. Valve function can be observed remotely via human-machine interface (HMI).</td>
+    </tr>
+    <tr>
+    <td>Reclosing Pressure Vent</td>
+    <td>Overpressure</td>
+    <td>Independent safeguard designed solely for pressure relief. Keeps tank isolated from atmosphere when not venting pressure.</td>
+    </tr>
+    <tr>
+    <td>Continuous Inert Blanketing via Control Valve</td>
+    <td>Vacuum</td>
+    <td>Prevents air ingress from creating a flammable mixture in the tank vapour space.</td>
+    </tr>
+    <tr>
+    <td>Reclosing Vacuum Breaker</td>
+    <td>Vacuum</td>
+    <td>Independent safeguard designed solely for vacuum relief. Keeps tank isolated from atmosphere when not breaking vacuum.</td>
+    </tr>
+    <tr>
+    <td>High Level Alarms and Flow Shut-Off</td>
+    <td>Overfilling</td>
+    <td>Instrumentation for tank high level and flow alarms should be completely separate from the normal level and flow measurement with separate sensors and control units.</td>
+    </tr>
+    </tbody>
+    </table>
+  </div>
+  <div id='section-four'>
+    <a class='general-btns'>
+      <button type="button" class='btn'>Add Rules</button>
+    </a>
+    <p><code>Design Rules:</code></p>
+    <ul>
+    <li>Most atmospheric storage tanks are specifically designed so that the roof wall seam will fail preferentially to any other joint, and the excess pressure safely relieved, hopefully mitigating the effects of an accident.</li>
+    <li>Pressure relief devices, directing the hazardous materials to a safe area, to protect the tank from overpressure.</li>
+    <li>A vacuum relief device located at, or near, the highest point in the tank.</li>
+    <li>Adequate venting capacity should provided for excess vapour generation. Overflow lines routed to a safe location and secondary containment.</li>
+    </ul>
+  </div>
+  <div id='section-five'>
+    <a class='general-btns'>
+      <button type="button" class='btn'>Add resources</button>
+    </a>
+    <p><strong>Further resources:</strong></p>
+    <ul>
+    <li><a href="https://law.resource.org/pub/us/cfr/ibr/002/api.620.2002.pdf">API 620: Design and Construction of Large Welded, Low-Pressure Storage Tanks</a></li>
+    <li><a href="https://law.resource.org/pub/us/cfr/ibr/002/api.2000.1998.pdf">API 2000: Venting Atmospheric and Low-Pressure Storage Tanks</a></li>
+    <li><a href="https://www.aiche.org/resources/publications/cep/2019/december/protect-tanks-overpressure-and-vacuum">Protect Tanks from Overpressure and Vacuum</a></li>
+    </ul>
+  </div>
+</div>
+<div id='secondary-section'>
+  <hr />
+  <h2 id="pressurised">Pressurised</h2>
+  <hr />
+  <p><strong>Description:</strong>
+  Describe what the item is.</p>
+  <table>
+  <thead>
+  <tr>
+  <th>Recommendations</th>
+  <th>Notes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>Header</td>
+  <td>Title</td>
+  </tr>
+  <tr>
+  <td>Paragraph</td>
+  <td>Text</td>
+  </tr>
+  </tbody>
+  </table>
+  <p><code>Design Rules:</code></p>
+  <ul>
+  <li>Design Rule 1</li>
+  <li>Design Rule 2</li>
+  <li>Design Rule 3</li>
+  </ul>
+  <p><strong>Further reading:</strong></p>
+  <hr />
+</div>
+</div>
+</div>
+</div>
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+            <script src="{{ url_for('static', filename='js/equipment.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/base.js') }}" defer></script>
+            <script src="{{ url_for('static', filename='search/main.js') }}" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

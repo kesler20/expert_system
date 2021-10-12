@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+Login Page
+{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <h3>{{msg}}</h3>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<head>
+    <form action=#, method='post'class='btn'>
+    <p>Date:</p>
+    <p><input type='text' placehorlder='{{ todays_date if todays_date }}' name='date'/></p>
+    <p>Node:</p>
+    <p><input type='text' name='Node'/></p>
+    <p>Participant id:</p>
+    <p><input type='text' placehorlder='{{participants if participants}}' name='participants'/></p>
+    <p><input type='submit' class='btn' value='submit'/></p>
+    </form>
+</head>
+{% endblock %}
+

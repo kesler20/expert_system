@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Chemicals - Expert System</title>
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+  <body>
+            <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+                <div class="container">
+                    <a class="navbar-brand" href="..">Expert System</a>
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Expanded navigation -->
+                    <div id="navbar-collapse" class="navbar-collapse collapse">
+                            <!-- Main navigation -->
+                            <ul class="nav navbar-nav">
+                                <li class="navitem">
+                                    <a href=".." class="nav-link">Homepage</a>
+                                </li>
+                                <li class="navitem">
+                                    <a href="../information/" class="nav-link">Information</a>
+                                </li>
+                                <li class="navitem active">
+                                    <a href="./" class="nav-link">Chemicals</a>
+                                </li>
+                                <li class="navitem">
+                                    <a href="../equipment/" class="nav-link">Equipment</a>
+                                </li>
+                                <li class="navitem">
+                                  <a href="../Explosions/" class="nav-link">Explosions</a>
+                              </li>
+                                <li class="navitem">
+                                    <a href="../data/" class="nav-link">Data</a>
+                                </li>
+                                <li class="navitem">
+                                    <a href="../help/" class="nav-link">Help</a>
+                                </li>
+                            </ul>
+
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                    <i class="fa fa-search"></i> Search
+                                </a>
+                            </li>
+                                <li class="nav-item">
+                                    <a rel="prev" href="../information/" class="nav-link">
+                                        <i class="fa fa-arrow-left"></i> Previous
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a rel="next" href="../equipment/" class="nav-link">
+                                        Next <i class="fa fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://github.com/harryhitchman/ExpertSystem/edit/master/docs/chemicals.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                        <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+                <span class="fa fa-angle-down"></span>
+            </button>
+        </div>
+
+        
+        <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+            <ul class="nav flex-column">
+                
+                <li class="nav-item" data-level="1"><a href="#chemicals-hub" class="nav-link">Chemicals Hub</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                
+                <li class="nav-item" data-level="1"><a href="#acids" class="nav-link">Acids</a>
+                  <ul class="nav flex-column">
+                <li class="nav-item" data-level="2"><a href="#hydrochloric-acid" class="nav-link">Hydrochloric Acid</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#nitric-acid" class="nav-link">Nitric Acid</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#phosphoric-acid" class="nav-link">Phosphoric Acid</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#sulphuric-acid" class="nav-link">Sulphuric Acid</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                  </ul>
+                </li>
+                
+                <li class="nav-item" data-level="1"><a href="#alcohols" class="nav-link">Alcohols</a>
+                  <ul class="nav flex-column">
+                <li class="nav-item" data-level="2"><a href="#methanol" class="nav-link">Methanol</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#propanol" class="nav-link">Propanol</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                  </ul>
+                </li>
+                
+                <li class="nav-item" data-level="1"><a href="#aldehydes-and-ketones" class="nav-link">Aldehydes and Ketones</a>
+                  <ul class="nav flex-column">
+                <li class="nav-item" data-level="2"><a href="#acetone" class="nav-link">Acetone</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                  </ul>
+                </li>
+                
+                <li class="nav-item" data-level="1"><a href="#alkalis-and-salts" class="nav-link">Alkalis and Salts</a>
+                  <ul class="nav flex-column">
+                <li class="nav-item" data-level="2"><a href="#ammonium-nitrate" class="nav-link">Ammonium Nitrate</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#ammonium-phosphate" class="nav-link">Ammonium Phosphate</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#ammonium-sulphate" class="nav-link">Ammonium Sulphate</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#calcium-hydroxide" class="nav-link">Calcium Hydroxide</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#calcium-oxide" class="nav-link">Calcium Oxide</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#potassium-hydroxide" class="nav-link">Potassium Hydroxide</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#sodium-chloride" class="nav-link">Sodium Chloride</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                  </ul>
+                </li>
+                
+                <li class="nav-item" data-level="1"><a href="#carbonates" class="nav-link">Carbonates</a>
+                  <ul class="nav flex-column">
+                <li class="nav-item" data-level="2"><a href="#sodium-carbonate" class="nav-link">Sodium Carbonate</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                  </ul>
+                </li>
+                
+                <li class="nav-item" data-level="1"><a href="#chlorinated-hydrocarbons" class="nav-link">Chlorinated Hydrocarbons</a>
+                  <ul class="nav flex-column">
+                <li class="nav-item" data-level="2"><a href="#ethylene-dichloride" class="nav-link">Ethylene Dichloride</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                  </ul>
+                </li>
+                
+                <li class="nav-item" data-level="1"><a href="#hydrocarbons" class="nav-link">Hydrocarbons</a>
+                  <ul class="nav flex-column">
+                <li class="nav-item" data-level="2"><a href="#benzene" class="nav-link">Benzene</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#ethylbenzene" class="nav-link">Ethylbenzene</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#ethylene" class="nav-link">Ethylene</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#heptane" class="nav-link">Heptane</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#propylene" class="nav-link">Propylene</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#toluene" class="nav-link">Toluene</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                  </ul>
+                </li>
+                
+                <li class="nav-item" data-level="1"><a href="#synthetic-chemicals" class="nav-link">Synthetic Chemicals</a>
+                  <ul class="nav flex-column">
+                <li class="nav-item" data-level="2"><a href="#styrene" class="nav-link">Styrene</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                  </ul>
+                </li>
+                
+                <li class="nav-item" data-level="1"><a href="#other" class="nav-link">Other</a>
+                  <ul class="nav flex-column">
+                <li class="nav-item" data-level="2"><a href="#ammonia" class="nav-link">Ammonia</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                <li class="nav-item" data-level="2"><a href="#carbon-dioxide" class="nav-link">Carbon Dioxide</a>
+                  <ul class="nav flex-column">
+                  </ul>
+                </li>
+                  </ul>
+                </li>
+            </ul>
+        </div>
+    </div></div>
+    <div class="col-md-9" role="main" id='main-column'>
+      <h1 id="chemicals-hub"><strong>Chemicals Hub</strong></h1>
+      <hr />
+      <p>The Chemicals Hub provides information and guidance for the chemicals within the Expert System workbook.
+      The key information pertaining to each of the chemicals includes:</p>
+      <ul>
+      <li>Hazards identification.</li>
+      <li>Handling and storage.</li>
+      <li>Individual protection measures.</li>
+      <li>Stability and reactivity.</li>
+      </ul>
+      <!------------------------------------------------------------------>
+
+      <!------------------------------------------------------------------>
+      <div id='general-section'>
+        <hr />
+        <div id='primary-chemicals'>
+          <h1 id="alcohols"><strong>Organic Compound</strong></h1>
+          <a class='general-btns'>
+            <button class='btn'>Edit</button>
+            <button id='dlt' class='btn'>Delete</button>
+            <button class='btn'>Add Chemicals</button>
+          </a>
+        </div>
+        <div id='secondary-chemicals'>
+          <hr />
+          <h2 id="methanol">Methanol</h2>
+          <hr />
+          <h2 id="propanol">Propanol</h2>
+          <hr />
+        </div>
+        <a id='general-btns-hazid'>
+          <button class='btn'>Edit</button>
+        </a>
+        <h4 id="section-1-hazards-identification"><strong>Section 1: Hazards identification</strong></h4>
+
+        <table id='table-id'>
+          <thead>
+            <tr>
+              <th>Hazard statement</th>
+              <th>Hazard class and category (according to GHS)</th>
+              <th>Precautionary measures</th>
+            </tr>
+          </thead>
+          <tbody id='table-body'>
+            <tr>
+              <td>Highly flammable liquid and vapour</td>
+              <td>Flam. Liq. 2</td>
+              <td>Keep away from open flames and hot surfaces. No smoking.</td>
+            </tr>
+            <tr>
+              <td>Causes serious eye damage</td>
+              <td>Eye Dam. 1</td>
+              <td>Wear protective gloves and eye protection.</td>
+            </tr>
+            <tr>
+              <td>May cause drowsiness or dizziness</td>
+              <td>STOT SE 3</td>
+              <td>Keep container tightly closed.</td>
+            </tr>
+          </tbody>
+        </table>
+        <a id="section-2-handling-and-storage">
+          <button class='btn'>Edit</button>
+          <h4 ><strong>Section 2: Handling and storage</strong></h4>
+          <ul>
+          <li>Provide adequate local and general ventilation as well as exhaustion at critical locations.</li>
+          <li>Recommended storage temperature: 15 – 25 °C.</li>
+          </ul>
+        </a>
+        <h4 id="section-3-individual-protection-measures"><strong>Section 3: Individual protection measures</strong></h4>
+        <ul>
+        <li>Eye protection: Use safety goggles with side protection.</li>
+        <li>Skin protection: Wear suitable chemical protection gloves (tested according to EN 374).</li>
+        <li>Respiratory protection: Necessary at aerosol or mist formation.</li>
+        <li>Other protection measures: Flame-retardant protective clothing.</li>
+        </ul>
+        <h4 id="section-4-stability-and-reactivity"><strong>Section 4: Stability and reactivity</strong></h4>
+        <ul>
+        <li>Reactivity: Risk of ignition. Vapours can form explosive mixtures with air.</li>
+        <li>Chemical stability: Stable under normal ambient and anticipated storage and handling conditions of temperature and pressure.</li>
+        <li>Hazardous reactions: <strong>violent reaction</strong> with alkali metals, alkaline earth metal, strong oxidiser.</li>
+        <li>Conditions to avoid: Keep away from heat.</li>
+        <li>Incompatible materials: Different plastics, rubber articles.</li>
+        </ul>
+        <hr />
+      </div>
+
+      <h1 id="hydrocarbons"><strong>Hydrocarbons</strong></h1>
+      <hr />
+      <h2 id="benzene">Benzene</h2>
+      <hr />
+      <h2 id="ethylbenzene">Ethylbenzene</h2>
+      <hr />
+      <h2 id="ethylene">Ethylene</h2>
+      <hr />
+      <h2 id="heptane">Heptane</h2>
+      <hr />
+      <h4 id="section-1-hazards-identification_1"><strong>Section 1: Hazards identification</strong></h4>
+      <table>
+      <thead>
+      <tr>
+      <th>Hazard statement</th>
+      <th>Hazard class and category (according to GHS)</th>
+      <th>Precautionary measures</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Highly flammable liquid and vapour</td>
+      <td>Flam. Liq. 2</td>
+      <td>Keep away from heat, hot surfaces, sparks, open flames, and other ignition sources. No smoking.</td>
+      </tr>
+      <tr>
+      <td>Causes skin irritation</td>
+      <td>Skin Irrit. 2</td>
+      <td>Wear protective gloves and eye protection.</td>
+      </tr>
+      <tr>
+      <td>May cause drowsiness or dizziness</td>
+      <td>STOT SE 3</td>
+      <td>Store in a well-ventilated place. Keep container tightly closed.</td>
+      </tr>
+      <tr>
+      <td>May be fatal is swallowed or enters airway</td>
+      <td>Asp Tox. 1</td>
+      <td></td>
+      </tr>
+      <tr>
+      <td>Very toxic to aquatic life with long lasting effects</td>
+      <td>Aquatic Acute 1/Chronic 1</td>
+      <td>Avoid release to the environment.</td>
+      </tr>
+      </tbody>
+      </table>
+      <h4 id="section-2-handling-and-storage_1"><strong>Section 2: Handling and storage</strong></h4>
+      <ul>
+      <li>Provide sufficient local and general ventilation.</li>
+      <li>Recommended storage temperature: 15 – 25 °C.</li>
+      </ul>
+      <h4 id="section-3-individual-protection-measures_1"><strong>Section 3: Individual protection measures</strong></h4>
+      <ul>
+      <li>Eye protection: Use safety goggles with side protection.</li>
+      <li>Skin protection: Wear suitable chemical protection gloves (tested according to EN 374).</li>
+      <li>Respiratory protection: Necessary at aerosol or mist formation.</li>
+      <li>Other protection measures: Flame-retardant protective clothing.</li>
+      </ul>
+      <h4 id="section-4-stability-and-reactivity_1"><strong>Section 4: Stability and reactivity</strong></h4>
+      <ul>
+      <li>Reactivity: Risk of ignition. Vapours can form explosive mixtures with air.</li>
+      <li>Chemical stability: Stable under normal ambient and anticipated storage and handling conditions of temperature and pressure.</li>
+      <li>Hazardous reactions: <strong>violent reaction</strong> with strong oxidiser, Phosphorus, Chlorine.</li>
+      <li>Conditions to avoid: Keep away from heat, hot surfaces, open flames and other ignition sources. No smoking.</li>
+      <li>Incompatible materials: Different plastics, rubber articles.</li>
+      </ul>
+    </div>                           
+            <footer class="col-md-12">
+                <hr>
+                <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+            </footer>
+            <script>
+                var base_url = "..",
+                    shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+            </script>
+            <script src="{{ url_for('static', filename='js/chemicals.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/base.js') }}" defer></script>
+            <script src="{{ url_for('static', filename='search/main.js') }}" defer></script>
+
+
+            <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter
+                        your search terms below.
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th style="width: 20%;">Keys</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="help shortcut"><kbd>?</kbd></td>
+                        <td>Open this help</td>
+                      </tr>
+                      <tr>
+                        <td class="next shortcut"><kbd>n</kbd></td>
+                        <td>Next page</td>
+                      </tr>
+                      <tr>
+                        <td class="prev shortcut"><kbd>p</kbd></td>
+                        <td>Previous page</td>
+                      </tr>
+                      <tr>
+                        <td class="search shortcut"><kbd>s</kbd></td>
+                        <td>Search</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </body>
+</html>

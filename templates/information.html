@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+        <title>Expert System</title>
+        <link type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+        <link type=text/css href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/base.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="{{ url_for('static', filename='/js/jquery-1.10.2.min.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='/js/bootstrap.min.js') }}" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Expert System</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Homepage</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Information</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../chemicals/" class="nav-link">Chemicals</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../equipment/" class="nav-link">Equipment</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Explosions/" class="nav-link">Explosions</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../data/" class="nav-link">Data</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../help/" class="nav-link">Help</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../chemicals/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/harryhitchman/ExpertSystem/edit/master/docs/information.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#information-hub" class="nav-link">Information Hub</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#guidance" class="nav-link">Guidance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#terminology" class="nav-link">Terminology</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#risk-ranking" class="nav-link">Risk Ranking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="information-hub"><strong>Information Hub</strong></h1>
+<hr />
+<p>The Information Hub:</p>
+<ul>
+<li>Provides high-level guidance for using the webpage.</li>
+<li>Explains how the suggested safeguards and design rules affect risk ranking.</li>
+<li>Defines key process safety and HAZOP terminology.</li>
+</ul>
+<hr />
+<h2 id="guidance">Guidance</h2>
+<ul>
+<li>
+<p>Once the likelihood of an unmitigated event occurring has been defined, this value applies to each of the category descriptors: people, assets, environment and reputation. The safeguards implemented will lower the likelihood of the mitigated event; however, they will not lower the consequence severity.</p>
+</li>
+<li>
+<p>You can only have a 'zero' rating for the consequence severity. You <strong>cannot</strong> have a potential scenario with a likelihood of zero.</p>
+</li>
+</ul>
+<hr />
+<h2 id="terminology">Terminology</h2>
+<p>The following terms and definitions are commonly encountered during the HAZOP study.</p>
+<table>
+<thead>
+<tr>
+<th>Terminology</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Causes</td>
+<td>Reasons why deviations occur.</td>
+</tr>
+<tr>
+<td>Design intent</td>
+<td>Designer's desired, or specific range of behaviour for properties which ensure that the item fulfills its requirements.</td>
+</tr>
+<tr>
+<td>Deviation</td>
+<td>Departure from the intention.</td>
+</tr>
+<tr>
+<td>Guideword</td>
+<td>A word or phrase which expresses and defines a specific type of deviation from a property's design intent.</td>
+</tr>
+<tr>
+<td>Hazard</td>
+<td>A deviation which has the potential to adversely impact people, assets or the environment.</td>
+</tr>
+<tr>
+<td>Node</td>
+<td>Process section within which parameters are investigated for deviation from its design intent.</td>
+</tr>
+<tr>
+<td>Safeguard</td>
+<td>Physical or procedural measures that will eliminate or reduce the likelihood of a hazard.</td>
+</tr>
+<tr>
+<td>Scenario</td>
+<td>Sequence of situations starting from the initiating event up to the consequences.</td>
+</tr>
+<tr>
+<td>Recommendation</td>
+<td>Suggested actions to prevent, detect, control, or mitigate the scenario identified.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="risk-ranking"><strong>Risk Ranking</strong></h2>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="{{ url_for('static', filename='js/base.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='search/main.js') }}" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

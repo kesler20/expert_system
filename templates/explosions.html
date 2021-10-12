@@ -1,0 +1,798 @@
+{% extends 'base.html' %}
+{% block title %}Login Page{% endblock %}
+{% block content %}
+<body>
+    <header>
+        <h1>
+            <strong>
+                Explosion Hub
+            </strong>
+        </h1>
+    </header>
+    <div id='explosions-scenarios'>
+        <hr/>
+         <h2>
+            Explosion scenarios
+        </h2>
+        <hr/>
+            <p>The most violent explosions usually result from dust/air mixtures that are fuel rich.</p>
+            <p>These are sudden release of stored energy, resulting pressure effects, blast, and missiles</p> 
+            <ul>
+              <li>	Blast wave </li>
+              <li>	Projectiles </li>
+              <li>	Toxic decomposition products</li>
+            </ul>
+        <h4>
+          <hr/>
+            Types of Fire
+        </h4>
+        <hr/>
+        <table border="1" class="dataframe">
+            <thead>
+              <tr style="text-align: right;">
+                <th>Types of explosions</th>
+                <th>Values</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Confined Vapour Cloud Explosion (CVCE)</td>
+                <td>A relatively small amount of flammable material, a few kilograms, can lead to an explosion when released into the confined space of a building.</td>
+              </tr>
+              <tr>
+                <td>Unconfined vapour cloud explosions (UCVCE)</td>
+                <td>This type of explosion results from the release of a considerable quantity of flammable gas, or vapour, into the atmosphere, and its subsequent ignition.</td>
+              </tr>
+              <tr>
+                <td>Boiling liquid expanding vapour explosions (BLEVE)</td>
+                <td>Boiling liquid expanding vapour explosions occur when there is a sudden release of vapour, containing liquid droplets, due to the failure of a storage vessel exposed to fire.</td>
+              </tr>
+              <tr>
+                <td>Dust explosions</td>
+                <td>NaN</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr/>
+            <ul>
+              <li>Flash – rapid leak igniting:</li>
+              <li>Caused by ignition of flammable substances in air.</li>
+              <li>Pool- pool of liquid igniting-bunds/ dikes.</li> 
+              <li> Ignition of vapour evaporation from a pool of liquid.</li>
+              <li>Jet – high pressure or small leak causing a jet igniting.</li>
+              <li>Layer burning - layer of powders burning may cause dust explosions</li>
+            </ul>
+          <hr/>
+            <p><code>Hazardous situations scenarios</code> </p> 
+            <ul>
+              <li>High speed venting of flammable gases</li>
+              <li>	Steam leaks in hazardous areas</li>
+              <li>	Vent lines containing flammable vapours</li>
+            </ul>
+            <p>	Charge may accumulate on:</p>
+            <ul>
+              <li>	Bulk powder</li>
+              <li>	Drum</li>
+              <li>	Personnel</li>
+              <li>	Vessel</li>
+              <li>	Transfer lines</li>
+            </ul>
+            <hr/>
+            <p>	<table border="1" class="dataframe">
+            <p>	<thead>
+            <p>	<tr style="text-align: right;">
+            <p>	<th>Static charging of FIBCs</th>
+            <p>	<th>Values</th>
+            <p>	</tr>
+            <p>	</thead>
+            <p>	<tbody>
+            <p>	<tr>
+            <p>	<td>charged powder</td>
+            <p>	<td>due to work in conveying system</td>
+            <p>	</tr>
+            <p>	<tr>
+            <p>	<td>contact of powder with bag walls and powder going out</td>
+            <p>	<td>charges bag &amp; powder</td>
+            <p>	</tr>
+            <p>	<tr>
+            <p>	<td>Other aspects</td>
+            <p>	<td>NaN</td>
+            <p>	</tr>
+            <p>	</tbody>
+            <p>	</table>
+            <hr/>
+            <p><code>Discharges from bulk powders scenarios</code></p>
+            <ul>
+              <li>	Brush (up to 3mJ)</li>
+              <li>	Sparks (energy dependant on capacitance)</li>
+              <li>	Cone (energy 10- few hundred mJ)</li>
+            </ul>
+
+            <p>	Isolated conductors/ personnel:</p>
+            <ul>
+              <li>	Charged by contact with bulk powder or induction sparks (fn of capacitance magnitude)</li>
+            </ul>
+            <p>	Plastics:</p>
+            <ul>
+              <li>	Brush (3mJ),</li>
+              <li>	high charging/ metal backing – propagating brush (.1000mJ)</li>
+            </ul>
+            <p>	Precautions for Powder Handling:</p>
+            <ul>
+              <li>	Antistatic additives don’t work on powders</li>
+              <li>	Hard to control static build up:</li>
+              <li>	Earthing / grounding is required</li>
+              <li>	Avoid plastics (Powder less than 3mJ)</li>
+              <li>	Prevent propagating brush discharges</li>
+            </ul>
+
+            <hr/>
+            	<table border="1" class="dataframe">
+            	<thead>
+            	<tr style="text-align: right;">
+            	<th>Possible static discharges</th>
+            	<th>Values</th>
+            	</tr>
+            	</thead>
+            	<tbody>
+            	<tr>
+            	<td>brush</td>
+            	<td>from insulating powder of bag fabric</td>
+            	</tr>
+            	<tr>
+            	<td>cone</td>
+            	<td>from bulk insulating powder</td>
+            	</tr>
+            	<tr>
+            	<td>propagating brush</td>
+            	<td>from double layer across bag fabric</td>
+            	</tr>
+            	<tr>
+            	<td>spark</td>
+            	<td>from isolated conductors on/in bag and nearby</td>
+            	</tr>
+            	<tr>
+            	<td>incidents</td>
+            	<td>NaN</td>
+            </tr>
+            </tbody>
+            </table>
+            <hr/>
+    </div>
+    <div id='design-considerations'>
+      <h2>
+        Design Considerations
+      </h2>
+        <hr/>
+            <p>	Ignition Sources</p> 
+            <ul>
+              <li>	person 30mj</li>
+              <li>	spark discharge</li>
+              <li>	brush discharge</li>
+              <li>	corona discharge</li>
+              <li>	propagating brush discharge</li>
+              <li>	cone discharges</li>
+              <li>	mechanical discharges</li>
+            </ul>
+            
+            <p>	Factors that change minimum ignition energy (MIE)</p>
+            <ul>
+                <li>	atmosphere- i.e. oxygen concentration</li>
+                <li>	Presence of flammable gases</li>
+                <li>	For Solids MIE varies strongly with particle size and manufacturing method.</li>
+                <li>	Test all suppliers   </li>
+                <li>	Test all particle sizes expected – consider fines created by attrition</li>
+            </ul>
+          <hr/>
+            <p><code>Charge generation</code></p>
+            <p>	Principal mechanism of <strong>contact electrification</strong></p>
+            <p>	Flow of powder:</p>
+            <ul>
+              <li>	Size reduction – (milling, grinding)</li>
+              <li>	Drying operations</li>
+              <li>	Filling and emptying bags/ FIBC/ Drum</li>
+              <li>	Pneumatic transfer</li>
+              <li>	charge accumulation</li>
+              <li>	Contact and separation of powder results in charge of one polarity on the powder and the opposite on the vessel</li>
+            </ul>
+            
+            <p>	Charging mechanisms depending on:</p>
+            <ul>
+                <li>	Powder resistivity</li>
+                <li>	Physical form</li>
+                <li>	Moisture content</li>
+                <li>	Particle size</li>
+                <li>	Contamination</li>
+            </ul>
+            <hr/>
+            <p>	<table border="1" class="dataframe">
+              <p>	<thead>
+              <p>	<tr style="text-align: right;">
+              <p>	<th>Powders Properties Considerations</th>
+              <p>	<th>Values</th>
+              <p>	</tr>
+              <p>	</thead>
+              <p>	<tbody>
+              <p>	<tr>
+              <p>	<td>Particle Size</td>
+              <p>	<td>smaller particles usually more sensitive and burn more violently</td>
+              <p>	</tr>
+              <p>	<tr>
+              <p>	<td>Solvent content</td>
+              <p>	<td>Even small amounts of solvents can render powders very ignition sensitive and give rise to very vioelednt ignitions</td>
+              <p>	</tr>
+              <p>	<tr>
+              <p>	<td>Moisture content</td>
+              <p>	<td>Ading water decreases sensitivity and explosion violence</td>
+              <p>	</tr>
+              <p>	<tr>
+              <p>	<td>Concentration</td>
+              <p>	<td>Worst case in air is slightly fuel rich increasing oxygen concentration can make things much worse</td>
+              <p>	</tr>
+              <p>	<tr>
+              <p>	<td>Temperature</td>
+              <p>	<td>NaN</td>
+              <p>	</tr>
+              <p>	</tbody>
+              <p>	</table>
+              <hr/>
+            <p><code>Resistivity</code></p>
+            <p>	Resistivity is the ability of a liquid to generate and accumulate electrostatic charge depends on the electrical resistivity</p>
+            <p>	if resistivity is less than 10^8(Ωm) it can be considered low, if resistivity is between 10^8(Ωm) and 10^10(Ωm) other considerations are required</p>
+            <p>	and anything higher then 10^10(Ωm) can be considered a high resistivity.</p>
+            <hr/>
+            <p>	Sources of fire</p>
+                        
+            <p>	The use of portable electrical equipment, welding, spark-producing tools and the movement of petrol-driven vehicles would also be subject to strict control. 
+              Exhaust gases from diesel engines are also a potential source of ignition.</p>
+            <ul>
+              <li>	static electricity</li>
+              <li>	process flames(open furnaces)</li>
+              <li>	to control the entry on to the site of obvious sources of ignition;</li> 
+              <li>	such as matches, cigarette lighters and battery-operated equipment.</li> 
+            </ul>
+            <hr/>
+            <p>	Increase moisture content:</li> 
+            <ul>
+              <li>	Raises energy needed for ignition</li> 
+              <li>	(ideally beyond what could be generated on the plant)</li> 
+              <li>	Generally, need more than 30 prcnt moisture content</li> 
+              <li>	Beware of dewatering in drums</li>
+            </ul>
+            <hr/>
+            <h3>Volume of receiving vessel</h3>
+            <hr/>
+            <img src="{{ url_for('static', filename='img/volume_of_receiving_vessle.png') }}" alt="volume of receiving" >
+            <hr/>
+            <p><code>Legislation</code></p>
+            <p>According to the law it is important to classify hazardous areas this is calso known as zoning:</p>
+            <ul>
+                <li>	The Fire Precautions (Workplace) Regulations 19974</li>
+                <li>	The Provision and Use of Work Equipment Regulations 19985</li>
+                <li>	The Workplace (Health, Safety and Welfare) Regulations 19926</li>
+                <li>	The Control of Substances Hazardous to Health Regulations 19997</li>
+                <li>	The Equipment and Protective Systems for Use in Potentially Explosive </li>
+                <li>	Atmospheres Regulations 19968</li>
+            </ul>
+            <p>	Permits for hot work</p>
+            <p>	Permits for hot work need to set out clearly: </p>
+          <ul>
+            <li>	your arrangements for handover,</li>
+              <li>	the allowable range of work, </li>
+              <li>	time limits on when the work may be done; </li>
+              <li>	the precautions required.</li>
+              <li>	The ACOP to the DSEAR regulations gives further information.</li>
+          </ul>
+            
+            <p>DSEAR3 requires the access points to zoned areas to be marked with 
+            	a yellow and black triangular Ex sign (see below), where the risk assessment 
+            	shows it will have some benefit. Signs might help remind employees where special rules apply</p>
+              <hr/>
+              <h3>Ex sign immage</h3>
+              <hr/>
+            <img src="{{ url_for('static', filename='img/EX_SIGN.png') }}" alt="Ex sign immage" >
+            <p>Additional fire precaustions to be taken in the design are given in the standards NFPA 30 (2003)</p>
+            <hr/>
+
+            <p><code>Bleve design considerations</code></p>
+            <p>For protection against Boiling Liquid Expanding Vapour Explosion (BLEVE)
+            	inter-connecting volumes can lead to pressure piling
+            	look at vented explosions versus confined deflregation</p>
+            
+            <p><strong>Dust explosion, design consequences</strong></p>
+            <p>The most violent explosions usually result from dust/air mixtures that are fuel rich.
+            A dust explosion can result in:</p>
+            <ul>
+              <li>	death or serious injury to workers.</li>
+              <li>	destruction of plant and buildings.</li>
+              <li>	a large fireball.</li>
+              <li>	secondary explosions.</li><!--fire. put a link that goes down when you click each of these sections-->
+            </ul>
+            <p>	Common ignition sources</p> 
+            <ul>
+              <li>	hot surfaces;</li>
+              <li>	naked flames;</li>
+              <li>	faulty or unsuitable equipment;</li>
+              <li>	overheating of moving mechanical plant eg by friction;</li>
+              <li>	impact sparks;</li>
+              <li>	electrostatic discharges;</li>
+              <li>	spontaneous heating;</li>
+              <li>	smoking materials</li>
+            </ul>
+            <p>Insulation and ignition prevention </p>
+            <p>	Charge is usually generated:</p>
+              <ul>
+                <li>	By contact</li>              
+                <li>	By work done on plowder</li>
+              </ul>
+
+            <p>	Insulators Defined by resistivities (Rs>10^10Ω):</p>
+            <ul>
+              <li>	Many Insulating materials are used:</li>
+              <li>	Glass (lined vessels)</li>
+              <li>	Plastics (pipes, vessels, packaging)</li>
+              <li>	Paper (sacks)</li>
+              <li>	Textiles (nylon, clothing, filter bags)</li>
+            </ul>
+            
+            <p>A flammable atmosphere is generated when there is an accumulation of electrostatic charge that is about to discharge</p>
+            <p>	charge can be generated by walking across the floor, liquids flowing through a pipe and powder falls down a cut</p>
+            <p>	Charge can’t keep accumulating charge level set by:</p>
+            <ul>
+                <li>	Resistivity of the object</li>
+                <li>	ionization can occur near the surface</li>
+                <li>	The breakdown strength of the surrounding air (normally -3MVm)</li>
+            </ul>
+            <hr/>
+            <p><strong>	Plastics and insulators can retain charge for a long time:</strong></p>
+            <ul>
+                <li>	Discharges limited to 3mJ</li>
+                <li>	do not use insulating plastics where sensitive flammable atmospheres are present (MIE 3 mJ)</li>
+            </ul>
+            <p>	Different Plastics:</p>
+            <p>	Available in conducting grades</p>
+              <ul>
+                <li>	Conductive better than antistatic</li>
+                <li>	Antistatic coatings can wear</li>
+              </ul>
+            <p>	Conductive plastics must be earthed</p>
+            <ul>
+                <li>	All parts need resistance to earth</li>
+                <li>	Pay attention to earthing linings</li>
+                <li>	Can confirm conductivity by testing</li>
+            </ul>
+            <p>	Typical precautions:</p>
+            <ul>
+                <li>	Earth all conducting objects</li>
+                <li>	Avoid plastics</li>
+                <li>	Avoid steam leaks in hazardous area of plants</li>
+            </ul>
+            <p>	Personnel and footwear</p>
+            <p>	Precautions ought to be taken as people by walking generate (10-30mj) and the clothing needs to be static dissipative,also, may need to be flame resistant</p>
+              <ul>
+                <li>	Footwear</li>            
+                <li>	Antistatic / Statlic dissipative/ ESD/ SD (USA)</li>
+                <li>	Need to test regularly</li>
+                <li>	Need suitable floors</li>
+                <li>	Conducting – used in explosive and semiconductor industries- only use where there is no risk of mains shock</li>
+              </ul>
+            <p>	Floor:</p>
+            <ul>
+            <li>	Conducting/ Antistatic available</li>
+                <li>	Must be kept clean and avoid deposits</li>
+                <li>	Beware contaminants</li>
+                <li>	oil, power</li>   
+            </ul>
+            <hr/>                   
+            <p><code>Other design considerations</code>	</p>
+            <p>	water can accumulate in low points in piping so we have drain valves
+            	If any part of the system goes below 0 degrees then ice can form, causing blockages and possible failure of moving parts. This is a danger not only for low temperature systems,
+            	but from cooling which occurs when pressure is released, and liquids can expand very quickly.
+            	Two-phase flow from the presence of water in a hydrocarbon creates a static charge, which has been known to ignite flammable vapours.
+            	Protection: Single phase fluid keep Velocity less than 7m/s Two liquid phases keep Velocity</p>
+            
+            <p><strong>Unit operations that require design:</strong>	 </p>
+            <p>Unit operations require careful design due to 70-80 percent of processed powders potentially explode</p>
+            <ul>
+                <li>	Milling/ Grinding</li>
+                <li>	Bag Filters</li>               
+                <li>	Cyclones</li>            
+                <li>	Pneumatic transfelr Systems</li>
+                <li>	Bucket Elevators</li>
+                <li>	Dryers</li>          
+                <li>	Silos</li>         
+                <li>	Blenders</li>            
+                <li>	Flakers</li>  
+              </ul>     
+            <p>	Handling liquids </p>
+            <p>	Charge generated on insulating liquids:</p>
+            <ul>
+                <li>	Reducing flow reduces charge</li>
+                <li>	Use orifice plates</li>
+                <li>	Limit Pump capacity Pipe six</li>
+              </ul>
+            <p>	Filling precautions</p>
+            
+            <ul>
+                <li>	Avoid splash filling & mist formation:</li>
+                <li>	Use dip legs</li>            
+                <li>	Bottom fill</li>           
+                <li>	Limit inlet veloclity</li>
+              </ul>
+            <p><strong>Flashpoint considerations</strong>	 </p>
+            <p>	adding water increases the flashpoint of liquids that are soluble in water	e.g. ethanol/water
+            completely soluble liquids are non-flammable if diluted to less than 1 percent volume/volume of water
+            partially soluble liquids may be flammable at even less than 1 percent of volume/volume of water e.g. MIBK</p>
+            
+            <hr/>
+            <p>	Control of static electricity: </p>
+            <ul>
+            <li>	earth all conducting plant items</li>
+            <li>	earth people</li>
+            <li>	minimise charge generation</li>
+            <li>	restrict use of plastics</li>
+          </ul>
+            <p>	Explosion measures: </p>
+          <ul>
+              <li>	Design pressure above Pmax</li>
+              <li>	Venting</li>
+              <li>	Weak panel that fails</li>
+            </ul>
+            <p>For suppression extinguish the flame before damaging pressure (CO2)
+            for Isolation top explosion moving to other vessels</p>
+          <hr/>
+            <p><strong>Types of explosion resistant design:</strong>	</p>
+          <ul>
+            <li>	Explosion pressure resistant (EN - 13445)</li>
+            <li>	Explosion Pressure Shock Resistant (EN - 14460)</li>
+          </ul>
+            <p>Chemical barriers:</p>
+            <p>	Commonly used either side of where suppression is used. Use with Dusts, Gases and Vapours detection by pressure or flame triggers firing of suppressant</p>
+            
+            <p>	Valves slam shut (EN - 15089):</p>
+            <ul>
+                <li>	Needs to work very quickly!</li>
+                <li>	Big valves- can it be fast enough</li>
+                <li>	Can be used Vapour, gases, and vapours</li>
+                <li>	Stops pressure, flame, burning particles & air flow</li>
+            </ul>
+            <p>	Flap and ventex valves (EN 16447):</p>
+            <ul>
+                <li>	Passive- pressure valve ahead of flame forces it shut</li>
+                <li>	Stops propagation, burning particles and air flow:</li>
+                <li>	Cheap so it might not be reliable</li>         
+                <li>	Weak explosions may not trigger it,</li>
+                <li>	Dust may obstruct</li>
+            </ul>
+            <p>	Rotary valves: </p>
+            <ul>
+                <li>	Often used in powder equipment</li>
+                <li>	Must stop detection of ignition</li>
+                <li>	Must be strong enough for explosion pressure</li>
+                <li>	Gaps must be narrow enough to quench flame</li>
+                <li>	Maintenance- no rodding!</li>
+              </ul>
+            <p>	Flame arrestors (EN - 12874): </p>
+            <ul>
+                <li>	Principles of operation</li>
+                <li>	Ignition of flammable gas/ vapour/ mist</li>
+                <li>	Flame propagates along to arrester</li>
+                <li>	Arrester splits flame into framelets</li>
+                <li>	Framelets go down narrow passages</li>
+                <li>	Framelets drop in temp</li>
+                <li>	Stops burning</li>
+            </ul>
+            	<hr/>
+            	<table border="1" class="dataframe">
+            	<thead>
+            	<tr style="text-align: right;">
+            	<th>Explosion Isolation</th>
+            	<th>Column 0</th>
+            	<th>Column 1</th>
+            	<th>Column 2</th>
+              <th>Column 3</th>
+            	</tr>
+            	</thead>
+            	<tbody>
+            	<tr>
+            	<td>Active</td>
+            	<td>chemical barriers</td>
+            	<td>slam shut valves</td>
+            	<td>spark detection</td>
+            	<td>NaN</td>
+            	</tr>
+            	<tr>
+            	<td>Passive</td>
+            	<td>Flap and ventex valves</td>
+            	<td>Diverters</td>
+            	<td>Rotary valves</td>
+              <td>Flame arrestors</td>
+            	</tr>
+            	</tbody>
+            	</table>
+            <hr/>
+            
+            <p><code>Diverters (EN 16020)</code></p>
+            <p>	Primary Safeguard:</p>
+            <ul>
+                <li>	Electrical conductors that can only store charge if isolated</li>
+              </ul>
+            <p>	Operations generating charge in liquids are:</p>
+            <p>	Flow through pipes valves and especially fine filters</p>
+            <ul>
+                <li>	(especially 2 phase liquid/liquid or solid/ liquid)</li>
+                <li>	Pouring from containers</li>
+              
+            <li>	Flow of 2 phase gas/liquid (e.g. wet steam)</li>
+            <li>	Atomization of liquids (e.g. water washing, splash filing )</li>
+            <li>	Agitating 2 phase liquids or solid/ liquid mixtures</li>
+            <li>	Gravity settling liquids or solids from liquid suspensions</li>
+            <li>	Crystallization in insulating liquids (e.g. toluene, hexane)</li>
+          </ul>  
+            <p>	Required precautions during liquid handling:</p>
+            <ul>
+            <li>	for restrictions keep flow at (1m/s for 2 liquid phases, 7/m/s for all liquids)</li>
+            <li>	Avoid splash filling and mist formation (dip tube- subsurface filling)</li>
+            <li>	Use relaxation tanks/ pipe volume Use antistatic additive</li>
+          </ul>
+            <p>	Earthing of all conducting items:</p>
+          <ul>
+                <li>	Conducting plant items</li>
+                <li>	Conducting bulk liquids in lined vessels</li>
+                <li>	Moveable items (e.g. drums/ personnel)</li>
+                <li>	Hand Tools</li>              
+                <li>	Control of chargel generation rate Flow</li>
+              </ul>
+            <hr/>
+            <h3>Water Handling Desgin Considerations</h3>
+            <img src="{{ url_for('static', filename='img/water_accumulate_at_bottom.png') }}" alt="water accumulate at bottom" >
+            <hr/>
+            <p>	Mitigation measures:</p>
+                <p>	The most important mitigation measure is maintaining the process buildings in a clean condition. 
+                  If you allow dust deposits to accumulate, they can provide the fuel for a secondary explosion.</p>
+                <p>We can group more technical measures to mitigate an explosion into the following main categories:</p>	
+              <ul>  
+                <li>explosion relief venting; </li>
+                <li>explosion suppression and containment; and plant siting and construction.</li>
+                <li>	Design considerations (ensure that electrical equipment have Meltable fuses)</li>
+              </ul>
+            <hr/>
+            <p>	Reliability of inerting system </p>
+            <p>	Many factors will influence the overall reliability of an inerting system.</p>
+            <ul>
+                <li>	the location and number of atmospheric sampling points</li>
+                <li>	type of sensor head</li>
+                <li>	frequency of calibration of the sensor</li>
+                <li>	contaminants in the system that interfere with sensor readings</li>
+                <li>	provision of safe means of control or shutdown, if the oxygen concentration exceeds a predetermined level</li>
+                <li>	adequate supplies of inert gas for all foreseeable needs</li>
+                <li>	the number of locations where air may enter the plant</li>
+                <li>	the safety margin allowed when setting control levels for oxygen</li>
+                <li>	the reliability of any electronic control system</li>
+            </ul>
+            <p><strong>Preventions:</strong></p>
+            <p>	to prevent flammable atmospheres:</p>
+            <ul>
+            <li>	Operate Below flash point</li>
+                <li>	Operate below the lower flammable limit</li>
+                <li>	Operate 50C below if possible</li>
+              </ul>
+            <p>	to prevent dust generation</p>
+          <ul>
+                <li>	Use aqueous pastes (some very wet pastes still form dust clouds)</li>
+                <li>	Use inert gas</li>
+            </ul>
+            <p>	To prevent flammable materials
+            avoid small particle size:</p>
+            <ul>
+                <li>	Large particles do no propagate flame readily</li>
+                <li>	Use particle sizes of >500 microns</li>
+                <li>	Avoid crushing/ attrition Produces fines</li>
+            </ul>
+            <p>	Dust control measures </p>
+            <p>	Localise where dust may occur:</p>
+            <ul>
+                <li>	Reduce the concentration of the suspended dust below the LEL</li>
+                <li>	In Europe ATEX directive requires plant to be free from deposited dust</li>
+              </ul>
+            <p>	controls over dust cloud formation</p>
+          <ul>
+                <li>	preventing the explosive atmosphere by inerting</li>
+                <li>	avoiding ignition sources</li>
+            </ul>
+            <p>	Good Housekeeping required:</p>
+            <ul>
+                <li>	Avoids the possibility of secondary explosions</li>
+                <li>	Avoids dust clouds from disturbed layers</li>
+                <li>	Can use explosion rated vacuums (must be maintained as SCE)</li>
+                <li>	Avoid Brushing- Wet if must brush</li>
+                <li>	DO NOT BLOW it causes dust clouds & dust will settle elsewhere</li>
+              </ul>
+      </div>
+      <div id='design-protections'>
+        <hr/>
+        <h2>
+          Design protections
+       </h2>
+       <hr/>
+            <ul>
+              <li>	Housekeeping</li>                
+              <li>	Suppression and vlenting</li>
+              <li>	Non-Sparking tools</li>
+              <li>	Intrinsically safe vacuums</li>
+              <li>	No dry brushing</li>
+              <li>	Earthing and grounding</li>
+              <li>	Testing all material</li>
+              <li>	Change material to avoid if possible</li>
+              <li>	Segregating / reduce quantity</li>
+              <li>	Repair and solve causes of blockages, leaks</li>
+              <li>	Operating discipline</li>
+            </ul>
+
+            <p>	<strong>Safe operating conditions</strong> </p>
+            <p>	Specify safe operating envelope:</p>
+            <ul>
+                <li>	Temperature, Pressure, and time</li>
+                <li>	Specify appropriate equipment</li>
+                <li>	Area classification/ Equipment T rating</li>
+                <li>	Temperature and scale that are critical for packaging, transport, and storage</li>
+                <li>	Electrical equipment T rating</li>
+                <li>	Prevent thermal cycling</li>
+                <li>	Contamination</li>
+                <li>	Variations in heating</li>
+                <li>	Variations in powder ( different batches)</li>
+            </ul>
+            <p>	Elimination of ignition sources: </p>
+             <ul>
+                <li>	Needs data</li>              
+                <li>	Intimate understalnding</li>
+                <li>	Flammability characteristics</li>
+                <li>	understanding of Plant, equipment, and operations</li>
+                <li>	Challenge assumptions considering experience</li>
+                <li>	Safety Margin</li>
+            </ul>
+
+            <p>	Many processes involving flammable dusts use a series of interconnected units of plant, such as grinders, elevators, cyclones,
+            	silos and filters. Unless you take appropriate precautions, an explosion occurring in any one unit of plant may spread from unit to unit causing extensive damage.</p>
+            <ul>
+              <li>	Rotary valves;</li>  
+            <li>	a choke of material in an intermediate hopper;</li> 
+            <li>	screw conveyors with a missing flight and baffle plate;</li> 
+            <li>	explosion suppression barriers;</li>
+            <li>	explosion isolation valves</li>
+          </ul>
+            <hr/>
+            <h3>1st rotary valve from hse report </h3>
+            <hr/>
+            <img src="{{ url_for('static', filename='img/hse_report_1st_rotary_valve.png') }}" alt="hse report 1st rotary valve" >
+            <hr/>
+            <p>	Rotary valves are commonly provided to control powder flow, or to act as an air lock.
+            	If they are also intended to act as explosion chokes, they need rigid blades eg of metal, 
+            that will not deform under a pressure wave</p>
+            <hr/>
+            <h3>Screw conveyor as choke from hse report </h3>
+            <hr/>
+            <img src="{{ url_for('static', filename='img/screw_conveyor_as_choke.png') }}" alt="screw conveyor as choke">
+            <hr/>
+            <p>	Explosion suppression barriers, also called advanced inerting systems are similar to suppressors
+            	used for major items of plant. A suppression barrier involves linking a pressure or optical detector
+            	to a rapid-acting device designed to inject an inerting or suppressing material into a duct.</p>
+              <h3>Advanced inerting systems from hse report </h3>
+              <hr/>
+            <img src="{{ url_for('static', filename='img/advanced_inerting_systems.png') }}" alt="advanced inerting systems" >
+            <hr/>
+            <p>	Explosion isolation valves act by closing in milliseconds,
+            	following detection of a flame or pressure rise by a sensor situated an appropriate distance towards the anticipated source of the explosion.
+            	They have particular advantages where you want to avoid a hold up of material within the plant.</p>
+            <hr/>
+            <h3>Explosion isolation valve from hse report </h3>
+            <hr/>
+            <img src="{{ url_for('static', filename='img/explosion_isolation_valve.png') }}" alt="explosion isolation valve" >
+            <p><code>Control of heat sources:</code></p>
+          <ul>
+            <li>	electrical equipment</li>
+            <li>	hot surfaces</li>
+            <li>	hot work permit</li>
+            <li>	control of friction</li>
+            <li>	mechanical friction</li>
+            <li>	impact sparks</li>  
+          </ul>
+          <hr/>
+          <h3>
+            <p>
+              <strong>Design Safety Checklist</strong> 
+            </p>
+          </h3>
+          <hr/>
+              <p>	Materials</p>
+          <ul>
+              <li>	flashpoint</li>
+              <li>	flammability range</li>
+              <li>	autoignition temperature</li>
+              <li>	composition</li>
+              <li>	stability (shock sensitive?)</li>
+              <li>	toxicity, TLV</li>
+              <li>	corrosion</li>
+              <li>	physical properties (unusual?)</li>
+              <li>	heat of combustion/reaction</li>
+          </div>
+              <p>	Process</p>
+              <p>o	Reactors</p>
+          <ul>
+              <li>	exothermic—heat of reaction</li>
+              <li>	temperature control—emergency systems</li>
+              <li>	side reactions—dangerous?</li>
+              <li>	effect of contamination</li>
+              <li>	effect of unusual concentrations (including catalyst)</li>
+              <li>	corrosion</li>
+          </ul>
+              <p>o	Pressure systems</p>
+          <ul>
+              <li>	need?</li>
+              <li>	design to current codes</li>
+              <li>	materials of construction—adequate?</li>
+              <li>	pressure relief—adequate?</li>
+              <li>	safe venting systems</li>
+              <li>	flame arresters</li>
+          </ul>
+              <p>	Control systems</p>
+          <ul>
+              <li>	fail safe</li>
+              <li>	backup power supplies</li>
+              <li>	high/low alarms and trips on critical variables</li>
+              <li>	temperature</li>
+          </ul>
+              <p>	ii. pressure</p>
+              <p>	iii. flow</p>
+              <p>	iv. level</p>
+              <p>	v. composition</p>
+          <ul>
+              <li>	backup/duplicate systems on critical variables</li>
+              <li>	remote operation of valves</li>
+              <li>	block valves on critical lines</li>
+              <li>	excess-flow valves</li>
+              <li>	interlock systems to prevent misoperation</li>
+              <li>	automatic shutdown systems</li>
+          </ul>
+              <p>	Storages</p>
+          <ul>
+              <li>	limit quantity</li>
+              <li>	inert purging/blanketing</li>
+              <li>	floating roof tanks</li>
+              <li>	dykeing</li>
+              <li>	loading/unloading facilities—safety</li>
+              <li>	earthing</li>
+              <li>	ignition sources—vehicles</li>
+          </ul>
+              <p>	General</p>
+          <ul>
+              <li>	inert purging systems needed</li>
+              <li>	compliance with electrical codes</li>
+              <li>	adequate lighting</li>
+              <li>	lightning protection</li>
+              <li>	sewers and drains adequate, flame traps</li>
+              <li>	dust-explosion hazards</li>
+              <li>	buildup of dangerous impurities—purges</li>
+              <li>	plant layout</li>
+              <li>	separation of units</li>
+          </ul>
+              <p>	ii. access</p>
+              <p>	iii. siting of control rooms and offices</p>
+              <p>	iv. services</p>
+          <ul>
+              <li>	safety showers, eye baths</li>
+          </ul>
+              <p>	Fire protection</p>
+          <ul>
+              <li>	emergency water supplies</li>
+              <li>	fire mains and hydrants</li>
+              <li>	foam systems</li>
+              <li>	sprinklers and deluge systems</li>
+              <li>	insulation and protection of structures</li>
+              <li>	access to buildings</li>
+              <li>	firefighting equipment</li>
+          </ul>            
+        </div>          
+    </div>
+</body>
+{% endblock %}

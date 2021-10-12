@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+        <title>Expert System</title>
+        <link type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+        <link type=text/css href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/base.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="{{ url_for('static', filename='/js/jquery-1.10.2.min.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='/js/bootstrap.min.js') }}" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Expert System</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Homepage</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../information/" class="nav-link">Information</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../chemicals/" class="nav-link">Chemicals</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Equipment</a>
+                            </li>
+                            <li class="navitem">
+                              <a href="../Explosions/" class="nav-link">Explosions</a>
+                          </li>
+                            <li class="navitem">
+                                <a href="../data/" class="nav-link">Data</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../help/" class="nav-link">Help</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../chemicals/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Explosions/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/harryhitchman/ExpertSystem/edit/master/docs/equipment.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#equipment-hub" class="nav-link">Equipment Hub</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#vessels" class="nav-link">Vessels:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ambient" class="nav-link">Ambient</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pressurised" class="nav-link">Pressurised</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#refrigerated" class="nav-link">Refrigerated</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#components" class="nav-link">Components:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#compressors" class="nav-link">Compressors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#flanges-and-gaskets" class="nav-link">Flanges and Gaskets</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#hose-and-couplings" class="nav-link">Hose and Couplings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pipework" class="nav-link">Pipework</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pumps" class="nav-link">Pumps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tankers" class="nav-link">Tankers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#valves" class="nav-link">Valves</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="equipment-hub"><strong>Equipment Hub</strong></h1>
+<hr />
+<p>The Equipment Hub provides recommended safeguards and design rules for the equipment items within the Expert System workbook. The risk-reduction measures can be implemented into the design to improve the tolerability of the identified hazardous scenario. Moreover, additional resources (e.g. codes and standard) are also provided to the user for further reading.</p>
+<hr />
+<h1 id="vessels"><strong>Vessels:</strong></h1>
+<hr />
+<h2 id="ambient">Ambient</h2>
+<hr />
+<h4 id="ambient-temperature-and-pressure-vessel">Ambient Temperature and Pressure Vessel</h4>
+<p><strong>Description:</strong>
+Small and Medium Atmospheric Tanks (SMATs) have a capacity of less than 450 m³, can be of either plastic or steel, and operate at ambient temperature and pressure conditions.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Safeguarding</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flame Arrestor Vent</td>
+<td>Overpressure</td>
+<td>Simple design similar to a free vent to atmosphere. Prevents external ignition sources from igniting flammable vapours in the tank.</td>
+</tr>
+<tr>
+<td>Continuous Venting via Control Valve</td>
+<td>Overpressure</td>
+<td>Can be routed to a closed system. Valve function can be observed remotely via human-machine interface (HMI).</td>
+</tr>
+<tr>
+<td>Reclosing Pressure Vent</td>
+<td>Overpressure</td>
+<td>Independent safeguard designed solely for pressure relief. Keeps tank isolated from atmosphere when not venting pressure.</td>
+</tr>
+<tr>
+<td>Continuous Inert Blanketing via Control Valve</td>
+<td>Vacuum</td>
+<td>Prevents air ingress from creating a flammable mixture in the tank vapour space.</td>
+</tr>
+<tr>
+<td>Reclosing Vacuum Breaker</td>
+<td>Vacuum</td>
+<td>Independent safeguard designed solely for vacuum relief. Keeps tank isolated from atmosphere when not breaking vacuum.</td>
+</tr>
+<tr>
+<td>High Level Alarms and Flow Shut-Off</td>
+<td>Overfilling</td>
+<td>Instrumentation for tank high level and flow alarms should be completely separate from the normal level and flow measurement with separate sensors and control units.</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Most atmospheric storage tanks are specifically designed so that the roof wall seam will fail preferentially to any other joint, and the excess pressure safely relieved, hopefully mitigating the effects of an accident.</li>
+<li>Pressure relief devices, directing the hazardous materials to a safe area, to protect the tank from overpressure.</li>
+<li>A vacuum relief device located at, or near, the highest point in the tank.</li>
+<li>Adequate venting capacity should provided for excess vapour generation. Overflow lines routed to a safe location and secondary containment.</li>
+</ul>
+<p><strong>Further resources:</strong></p>
+<ul>
+<li><a href="https://law.resource.org/pub/us/cfr/ibr/002/api.620.2002.pdf">API 620: Design and Construction of Large Welded, Low-Pressure Storage Tanks</a></li>
+<li><a href="https://law.resource.org/pub/us/cfr/ibr/002/api.2000.1998.pdf">API 2000: Venting Atmospheric and Low-Pressure Storage Tanks</a></li>
+<li><a href="https://www.aiche.org/resources/publications/cep/2019/december/protect-tanks-overpressure-and-vacuum">Protect Tanks from Overpressure and Vacuum</a></li>
+</ul>
+<hr />
+<h2 id="pressurised">Pressurised</h2>
+<hr />
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="generic-pressure-vessels">Generic Pressure Vessels</h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="chlorine-pressure-vessels">Chlorine Pressure Vessels</h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="lpg-pressure-vessels">LPG Pressure Vessels</h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>To reduce the probability of a BLEVE the LPG tank can be mounded or buried to give protection from fire engulfment and this will significantly reduce the probability of BLEVE.</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="spherical-pressure-vessels">Spherical Pressure Vessels</h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="chemical-reactor-pressure-vessels">Chemical Reactor Pressure Vessels</h4>
+<hr />
+<h2 id="refrigerated">Refrigerated</h2>
+<hr />
+<h4 id="refrigerated-liquid-oxygen-vessel">Refrigerated Liquid Oxygen Vessel</h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="refrigerated-lng-vessels">Refrigerated LNG Vessels</h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="refrigerated-ambient-pressure-vessels">Refrigerated Ambient Pressure Vessels</h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h1 id="components"><strong>Components:</strong></h1>
+<hr />
+<h2 id="compressors">Compressors</h2>
+<hr />
+<h4 id="centrifugal"><strong>Centrifugal</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>It is common practice to install a knock-out vessel with level detection in the suction of any compressor for which there is a risk of liquid accumulation in the suction line. The requirement depends upon the probability of liquid accumulation and the tolerance of the compressor to liquid.</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="reciprocating"><strong>Reciprocating</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h2 id="flanges-and-gaskets">Flanges and Gaskets</h2>
+<hr />
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>The flange breaking procedure should follow a colour coded system (e.g., traffic light system) for tagging the flanges. Red (broken), yellow (torqued) and green (leak tested). Following this, the tag can be removed.</li>
+<li>In maintenance procedures involving opening-up the process, ensure that process linework is both depressurised and free of hydrocarbons before breaking any flanges.</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h2 id="hose-and-couplings">Hose and Couplings</h2>
+<hr />
+<h4 id="basic-average-and-multi-safety-system-facilities"><strong>Basic, Average and Multi Safety-System Facilities</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h2 id="pipework">Pipework</h2>
+<hr />
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>When defining the pipework inspection programme, areas of pipework that fall within the CUI (corrosion under insulation) temperature range need to be considered. The higher the temperature, the faster the rate of CUI; however, if the temperature is too high, the water will boil away and you will be left with a dry steam - so no CUI will occur. This is only relevant for carbon steel pipework.</li>
+<li>Consideration must be given to the implications and risks of CUI when specifying the paint specification for carbon steel pipework and the insulation specification, particularly around pipe supports and pipe hangers, which provide a possible entry point for rain into the insulation through the metal covering.</li>
+<li>By contrast, stainless steel suffers from MIC (microbial induced corrosion).</li>
+<li>Risk of chlorine induced corrosion of stainless steel if the temperature falls below the dew point of water within cooler parts of the process (due to chloride condensing out).</li>
+<li>Naphthenic acids (NAs) corrosion occurs in the 218-400 °C temperature range for most process pipework metallurgy. Refer to API 581 for more information.</li>
+<li>N.B. You're always allowed to overpressure pipework, provided it has been designed to ASME B31 (Code for Pressure Piping), and are allowed a certain number of hours at 110%, 120% and 133% above design pressure.</li>
+</ul>
+<p><strong>Further reading:</strong>
+1. ASME B31 (Code for Pressure Piping).
+2. API 581 (Risk-based Inspection Methodology).</p>
+<hr />
+<h2 id="pumps"><strong>Pumps</strong></h2>
+<hr />
+<h4 id="pump-casing"><strong>Pump Casing</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Typically, pumps are not insulated due to the difficulty in moulding the insulation around the pump. However, exceptions exist, e.g., in hot oil service in the 350 °C temperature range, insulated with a concrete block.</li>
+<li>VSD setpoints controlled, e.g., by operator, (key) locked in DCS or fixed locally.</li>
+<li>Maximum stall head of pump (at max VSD speed) is unlikley to be 2x the operating head; hence, can be taken at 30%.</li>
+<li>Pump maintenance is considered as minor maintenance. Hence, no pre start-up checklist is required afterwards. However, a line check should be carried out, whereby all valves in the nearby linework are checked to ensure the valves are in their correct positions.</li>
+<li>You don't want suction strainers on a pump. Instead, put a filter on the discharge side of the pump if you want to have a filtered product (as the discharge has a higher pressure).</li>
+<li>Consider the need to provide positive isolation (using a blank or spectacle blind) to avoid single valve isolation.</li>
+<li>Consider how to safely collect liquids draining from the pump body vent to prevent spillage to grade, and the PPE requirements to safely vent pump body. For example, the use of a metal can/tin to help collect any liquids.</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h2 id="tankers"><strong>Tankers</strong></h2>
+<hr />
+<h4 id="standard-tankers"><strong>Standard Tankers</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>FFS = fire suppression system. This is a typical safeguard for tanks against the risk of fire.</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="road-tankers"><strong>Road Tankers</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Install hydrocarbon gas or VOC (volatile organic compound) detection in the vicinity of the loading (exporting) station to detect any venting or spillage during the road tanker loading process.</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="lpg-road-tankers"><strong>LPG Road Tankers</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h2 id="valves"><strong>Valves</strong></h2>
+<hr />
+<h4 id="manual-valves"><strong>Manual Valves</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Always have operator training and start-up procedure.</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>You can either lock or car seal manual valves. Car sealing involves attaching a plastic seal to lock the valve, providing the operator with a 'memory jog' that this valve should remain locked in this position (e.g., open). It can be easily broken (e.g., to close the value in an emergency) without the need to lock/unlock with a traditional key and padlock.</li>
+<li>Lock manual valves open if they are required in essential, emergency safety service (e.g., purging) in order to prevent against accidental closure.</li>
+<li>Lock manual valves open on a minimum flow recirculation line to protect the pump.</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="remotely-operated-shut-off-roso-valves"><strong>Remotely Operated Shut-Off (ROSO) Valves</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Interlock the isolation valve and pump to ensure that the pump cannot run whilst the isolation valve is closed. Nowadays, every pump has a remote start functionality.</li>
+<li>All isolation valves will have a failure position alarm, e.g., fail to open alarm.</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="automatic-shut-off-asov-valves"><strong>Automatic Shut-Off (ASOV) Valves</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Design Rule 1</li>
+<li>Design Rule 2</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="speed-limiting-xsf-valves"><strong>Speed Limiting (XSF) Valves</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mechanical Minimum Stop Position</td>
+<td>This ensures a minimum flow at all time (e.g., through the tubes of a heat exchanger, reducing coking risk and extending the lifetime of the process equipment)</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>Any control valve on a cooling flow line should be fail open.</li>
+<li>All control valves should have a position deviation alarm to indicate if the valve is not in the correct position.</li>
+<li>Design Rule 3</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr />
+<h4 id="non-return-valves-nrvs"><strong>Non Return Valves (NRVs)</strong></h4>
+<p><strong>Description:</strong>
+Describe what the item is.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mechanical Minimum Stop Position</td>
+<td>This ensures a minimum flow at all time (e.g., through the tubes of a heat exchanger, reducing coking risk and extending the lifetime of the process equipment)</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><code>Design Rules:</code></p>
+<ul>
+<li>The failure of a NRV depends on the service or process environment that it is installed in. However, when installed in a clean nitrogen service, the likelihood of failure is not considered as a credible scenario.</li>
+<li>Add NRV to "critical NRV" list and define a maintenance programme to ensure that it works on demand if there is an associated <strong>safety</strong> consequence of it failing (but not if the consequence is just an operational issue).</li>
+<li>In small bore lines, use a spring-ball NRV. In larger diameter lines, using a NRV with a 'flapper' will become large and heavy.</li>
+<li>Cannot claim a single NRV as a barrier when it's in dirty service and/or not subject to periodic inspection (i.e., not a safety critical NRV).</li>
+<li>Be aware of gum deposits as a sticky, gloopy mess that can stick NRV's open or closed. These are more prevalent in services at higher temperatures and where there is oxygen ingress. Occurs in diesel services but not MOLO.</li>
+</ul>
+<p><strong>Further reading:</strong></p>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="{{ url_for('static', filename='js/base.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='search/main.js') }}" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

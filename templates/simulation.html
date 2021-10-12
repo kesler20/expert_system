@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block title %}
+Login Page
+{% endblock %}
+{% block content %}
+<head>
+    <h2>
+        <strong>
+            Simulation Hub
+        </strong>
+    </h2>
+</head>
+<body>
+    <hr/>
+    <p>In this section you can upload your data for analysis or you can use one of the existing datasets</p>
+    <p>If you want to upload the data</p>
+    <a href='/data_upload/'>
+        <p>click here</p>
+    </a>
+    <p>Additionally you need to choose what type of simulation you want to carry out from the following options:</p>
+    <hr/>
+    <div class='containter_simulation'>
+        <div class='left_sim'>
+            <button class='btn' type='button'>Regression</button>
+            <img src="{{url_for('static', filename='img/R.png')}}" alt="regression">
+            <form action='../data_analysis' method='post'class='btn'>
+                <p>X:</p>
+                <p><input type='text' name='simulation-X'/></p>
+                <p>Y:</p>
+                <p><input type='text' name='simulation-Y'/></p>
+                <p>Z(Optional):</p>
+                <p><input type='text' name='simulation-Z'/></p>
+                <p>Filename:</p>
+                <p><input type='text' name='simulation-filename'/></p>
+                <p><input type='submit' value='submit'/></p>
+            </form>
+        </div>
+        <div class='right_sim'>
+            <button class='btn' type='button'>Classification</button>
+            <img src="{{url_for('static', filename='img/neural_nets.jpg')}}" alt="neural nets">
+            <form action='../data_analysis' method='post'class='btn'>
+                <p> </p>
+                <p> </p>
+                <p>X:</p>
+                <p><input type='text' name='X'/></p>
+                <p>Y (Class name):</p>
+                <p><input type='text' name='Y'/></p>
+                <p>Samples (Optional):</p>
+                <p><input type='text' name='Z'/></p>
+                <p>Filename:</p>
+                <p><input type='text' name='filename'/></p>
+                <p><input type='submit' value='submit'/></p>
+            </form>
+        </div>
+    </div>
+    <hr/>
+    <div class='section_description'>
+        <p>If classification was selected the Y variable will be considered the classes of the X variable and the Z variable will not be considered</p>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p>{{msg}}</p>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+    </div>
+    <hr/>
+    <div class='containter_simulation'>
+        <div class='left_sim'>
+            <button class='btn' type='button'>Event Tree</button>
+            <img src="{{url_for('static', filename='img/R.jpg')}}" alt="Event Tree">
+        </div>
+        <div class='right_sim'>
+            <button class='btn' type='button'>Fault Tree</button>
+            <img src="{{url_for('static', filename='img/fault_tree.jpg')}}" alt="Fault Tree">
+        </div>
+    </div>
+    <hr/>
+    <div class='input_form'>
+        <p>If you select the Event tree enter the architecture as an array</p>
+        <form action='../data_analysis2' method='post'class='btn'>
+            <p>Architecture:</p>
+            <p><input type='text' name='list_architecture0'/></p>
+            <p><input type='text' name='list_architecture1'/></p>
+            <p><input type='text' name='list_architecture2'/></p>
+            <p><input type='text' name='list_architecture3'/></p>
+            <p>Initiating Event</p>
+            <p><input type='text' name='initiating event'/></p>
+            <p>List of Events</p>
+            <p><input type='text' name='event0'/></p>
+            <p><input type='text' name='event1'/></p>
+            <p><input type='text' name='event2'/></p>
+            <p><input type='text' name='event3'/></p>
+            <p>Frequency of events</p>
+            <p><input type='text' name='event_value0'/></p>
+            <p><input type='text' name='event_value1'/></p>
+            <p><input type='text' name='event_value2'/></p>
+            <p><input type='text' name='event_value3'/></p>
+            <p><input type='submit' value='submit'/></p>   
+        </form>
+    </div>
+    <hr/>
+</body>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+{% endblock %}

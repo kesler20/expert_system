@@ -1,0 +1,1683 @@
+{% extends 'base.html' %}
+{% block title %}Login Page{% endblock %}
+{% block content %}
+<div id='section-one'>
+  <h1>
+     <strong>Calculations Hub</strong> 
+  </h1>
+  <hr/>
+  <p>Within this section you can use the provided functions and the datasets to 
+  estimate values for back of the envelope design calculations and chemicals classification.
+Additionally, you can use functions to estimate values for the rist assesment that can be complemented
+with a Fault or Event Tree analysis in the Simulations section <a href="../simulation">here</a></p>
+<hr/> 
+  <a class='function'>
+      
+      <p> where tau is the decay time to 1/e of charge dissipated (approx. 63 prcnt)
+          epsilon 0 is the relative permittivity of the powder (dielectric constant)
+          epsilon R is the permittivity of free space (8.85 x10^-12 F/m)
+          and rho is the resistivity of powder in (Ωm) 
+          the generation rate is primarily determined by work done
+          Dissipation controlled by powder resistivity: τ=ϵ_0 ϵ_R ρ</p>
+      <p>charge dissipation</p>
+      <form action='../charge_dissipation' method='post'class='btn'>
+          <p>Resistivity of powder in (Rho) (Ωm):</p>
+          <p>{% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <h3>{{msg}}</h3>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}</p>
+          <p><input type='text' placehorlder='Enter epsilon0' name='epsilon0'/></p>
+          <p><input type='text' placehorlder='Enter epsionR' name='epsionR'/></p>
+          <p><input type='text' placehorlder='Enter rho' name='rho'/></p>
+          <p><input type='submit' value='submit'/></p>
+      </form> 
+  </a>
+<hr/>
+<p> </p>
+<table border="1" class="dataframe">    
+    <thead>
+      <tr style="text-align: right;">     
+        <th>Explosion Properties Data</th>
+        <th>Column 0</th>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hydrogen H2</td>
+        <td>22.1</td>
+        <td>2318.0</td>
+        <td>6.9</td>
+        <td>400.0</td>
+      </tr>
+      <tr>
+        <td>Methane CH4</td>
+        <td>2.8</td>
+        <td>2148.0</td>
+        <td>7.5</td>
+        <td>601.0</td>
+      </tr>
+      <tr>
+        <td>Ethane C2H6</td>
+        <td>3.4</td>
+        <td>2168.0</td>
+        <td>7.7</td>
+        <td>515.0</td>
+      </tr>
+      <tr>
+        <td>Propane C3H8</td>
+        <td>3.3</td>
+        <td>2198.0</td>
+        <td>7.9</td>
+        <td>450.0</td>
+      </tr>
+      <tr>
+        <td>n-Butane C4H10</td>
+        <td>3.3</td>
+        <td>2168.0</td>
+        <td>7.9</td>
+        <td>405.0</td>
+      </tr>
+      <tr>
+        <td>Pentane C5H12</td>
+        <td>3.4</td>
+        <td>2232.0</td>
+        <td>8.1</td>
+        <td>260.0</td>
+      </tr>
+      <tr>
+        <td>Hexane C6H14</td>
+        <td>3.4</td>
+        <td>2221.0</td>
+        <td>8.1</td>
+        <td>225.0</td>
+      </tr>
+      <tr>
+        <td>Acetylene C2H2</td>
+        <td>14.8</td>
+        <td>2598.0</td>
+        <td>8.7</td>
+        <td>305.0</td>
+      </tr>
+      <tr>
+        <td>Ethylene C2H4</td>
+        <td>6.5</td>
+        <td>2248.0</td>
+        <td>7.8</td>
+        <td>490.0</td>
+      </tr>
+      <tr>
+        <td>Propylene C3H6</td>
+        <td>3.7</td>
+        <td>2208.0</td>
+        <td>7.8</td>
+        <td>460.0</td>
+      </tr>
+      <tr>
+        <td>Benzene C6H6</td>
+        <td>5.0</td>
+        <td>2287.0</td>
+        <td>8.1</td>
+        <td>560.0</td>
+      </tr>
+      <tr>
+        <td>Cyclohexane C6H12</td>
+        <td>NaN</td>
+        <td>NaN</td>
+        <td>NaN</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table> 
+  <p> </p>
+  <hr/>
+  
+<a class='function'>
+      
+  <p> pressure explosion ratio is typically 7-8 as such the temperature explosion ratio as well
+      (P_ex/P_0 )≈(T_ex/T_0 )
+      where knowing that T_0≈300K we can deduce that its T_ex≈1500-3000K if the ratio is between 5-10
+      for a constant pressure case:
+      (V_ex/V_0 )≈(T_ex/T_0 )</p>
+  <p>Pressure explosion</p>
+  <form action=#, method='post'class='btn'>
+      <p>Initial pressure (barg):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+<a class='function'>
+  <p>
+    The K st value is a measure of the change in the maximum pressure over time</p>
+  <p>
+    K_st</p>
+  <form action=#, method='post'class='btn'>
+      <p>Maximum pressure change over time (barg):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p>Volume (metres cubed):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+<a class='function'>
+      
+  <p>
+      Brode’s Equation can be used to measure the energy released from an explosion
+      W_e=(P-P_E )V/(γ-1)
+      Where We is the energy of explosion, P is absolute gas pressure, PE is the absolute ambient pressure, 
+      V is vapour volume, and  is the ratio of specific heats
+      this can be converted from heat of explosion (j/g) to calculate how much in kg of a particular substance is required to generate the calculated We.
+      </p>
+  <p>Energy of explosion</p>
+  <form action=#, method='post'class='btn'>
+      <p>P (bara):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p>P ambient:</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p>Gamma:</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+<a class='function'>
+      
+  <p>This function calculates the Lower Explosible Limit, typical value for LEL for powders is 40g/m^3</p>
+  <p>Lower explosible limit calculations</p>
+          <p>{% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <h3>{{msg}}</h3>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}</p>
+  <form action=#, method='post'class='btn'>
+      <p>Kilograms of powder required (kg):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='lel-kg'/></p>
+      <p>Volume (metres cubed):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='lel-v'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+<a class='function'>
+      
+  <p>This functions returns gives Ignition energyin related precautions</p>
+  <p>K_st</p>
+  <form action=#, method='post'class='btn'>
+      <p>Minimum Ignition energyin (mJ):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+<a class='function'>
+      
+  <p>Ths function classifies the flashpoint of a chemicals</p>
+  <p>Classification</p>
+  <form action=#, method='post'class='btn'>
+      <p>Flashpoint (degrees celsius):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p>Boiling point (degrees celsius):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+<a class='function'>
+      
+  <p>This fucniton check_maximum_surface_temperature_for_electrical_equipment</p>
+  <p>K_st</p>
+  <form action=#, method='post'class='btn'>
+      <p>max_surface_temperature (degrees celsius):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+<a class='function'>
+      
+  <p>This fucniton ST_powder_classification</p>
+  <p>K_st</p>
+  <form action=#, method='post'class='btn'>
+      <p>K_st (metres*bar/s):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p>Volume (metres cubed):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+<a class='function'>
+      
+  <p>This fucniton check_maximum_flow_velocity_restrictions </p>
+  <p>K_st</p>
+  <form action=#, method='post'class='btn'>
+      <p>Single_phase (barg):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p>Liquid_resistivity) (metres cubed):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+<p> </p>
+<table border="1" class="dataframe">
+<thead>
+  <tr style="text-align: right;">
+      <th>PFD range per Level</th>
+    <th>Safety Integrity Level 4</th>
+    <th>Safety Integrity Level 3</th>
+    <th>Safety Integrity Level 2</th>
+    <th>Safety Integrity Level 1</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+      <td>from</td>
+      <td>0.00010</td>
+      <td>0.0010</td>
+      <td>0.010</td>
+      <td>0.10</td>
+  </tr>
+  <tr>
+      <td>to</td>
+      <td>0.00001</td>
+      <td>0.0001</td>
+      <td>0.001</td>
+      <td>0.01</td>
+  </tr>
+</tbody>
+</table>
+<hr/>
+<a class='function'>
+      
+  <p>the risk reduction factor of the protective system can be calculated as the ratio between f_np and f_t    
+      that is basically calculating how much of the inherent risk F_np has been normalised by the F_t
+      PFD is the probablility that the system will fail in operation</p>
+  <p>R_np</p>
+  <form action=#, method='post'class='btn'>
+      <p>F_np (barg):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p>F_t (metres cubed):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+<p> </p>
+<a class='function'>
+      
+  <p>This function calculates the fractional dead time, the failure rate lambda is the number of time per year that a protetcitve system is faulty
+      the time interval between tests of the devices is tau (how many times is tested per year)
+      probability protective system is inactive when required is fractional dead time</p>
+  <p>K_st</p>
+  <form action=#, method='post'class='btn'>
+      <p>Tau (barg):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p>Lambda (metres cubed):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+<p> </p>
+<a class='function'>
+      
+  <p>This function gives the toxicity classification given the lethal dose of a chemicaol</p>
+  <p>lethal_dose50_claassification</p>
+  <form action=#, method='post'class='btn'>
+      <p>lethal_dose50 (barg):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p>Volume (metres cubed):</p>
+      <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+      <p><input type='submit' value='submit'/></p>
+  </form> 
+</a>
+<hr/>
+
+<p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>powder charging rates</th>
+        <th>Column 0</th>
+        <th>Column 1</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sieving</td>
+        <td>1.000000e-11</td>
+        <td>1.000000e-09</td>
+      </tr>
+      <tr>
+        <td>Pouring</td>
+        <td>1.000000e-09</td>
+        <td>1.000000e-07</td>
+      </tr>
+      <tr>
+        <td>Scroll Feeding</td>
+        <td>1.000000e-08</td>
+        <td>1.000000e-06</td>
+      </tr>
+      <tr>
+        <td>Grinding</td>
+        <td>1.000000e-07</td>
+        <td>1.000000e-06</td>
+      </tr>
+      <tr>
+        <td>Micronising</td>
+        <td>1.000000e-07</td>
+        <td>1.000000e-04</td>
+      </tr>
+      <tr>
+        <td>Pneumatic Conveying</td>
+        <td>NaN</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <a class='function'>
+    <p>
+      Flame speed is proportional to the volume of the mixture consumed per second</p>
+    <p>
+      Flame speed</p>
+    <form action=#, method='post'class='btn'>
+        <p> Volume of mixture consumed (metres cubed per second):</p>
+        <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+        <p>Flame area (metres squared):</p>
+        <p><input type='text' placehorlder='Enter X variable' name='X'/></p>
+        <p><input type='submit' value='submit'/></p>
+    </form> 
+  </a>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>LOC values</th>
+        <th>Column 0</th>
+        <th>Column 1</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Rye Flour</td>
+        <td>29.0</td>
+        <td>13.0</td>
+      </tr>
+      <tr>
+        <td>Organic Pigment</td>
+        <td>10.0</td>
+        <td>12.0</td>
+      </tr>
+      <tr>
+        <td>Methyl Cellulose</td>
+        <td>70.0</td>
+        <td>10.0</td>
+      </tr>
+      <tr>
+        <td>Beta Naphitol</td>
+        <td>30.0</td>
+        <td>7.0</td>
+      </tr>
+      <tr>
+        <td>Sulphur</td>
+        <td>30.0</td>
+        <td>7.0</td>
+      </tr>
+      <tr>
+        <td>Paraformaldehyde</td>
+        <td>23.0</td>
+        <td>6.0</td>
+      </tr>
+      <tr>
+        <td>Aluminium</td>
+        <td>NaN</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        
+        <th>Incenditives</th>
+        <th>Column 0</th>
+        <th>Column 1</th>
+        <th>Column 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lighting</td>
+        <td></td>
+        <td>1000</td>
+        <td>Everything</td>
+      </tr>
+      <tr>
+        <td>Spark</td>
+        <td>Conductors (i.e. People)</td>
+        <td>1000 mj or higher</td>
+        <td>All Gas/Vapour/Dusts</td>
+      </tr>
+      <tr>
+        <td>Propagating Brush</td>
+        <td>Insulators with metal backing</td>
+        <td>1000 or higher</td>
+        <td>All Gas/Vapour/Dusts</td>
+      </tr>
+      <tr>
+        <td>Cone</td>
+        <td>Bulk Powders</td>
+        <td>Max 10 - 100 mj</td>
+        <td>All Gas/Vapour and some Dusts</td>
+      </tr>
+      <tr>
+        <td>Brush</td>
+        <td>Insulators</td>
+        <td>less then or equal to 3 mj</td>
+        <td>All Gas/Vapour few Dusts</td>
+      </tr>
+      <tr>
+        <td>Corona</td>
+        <td>NaN</td>
+        <td>NaN</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        
+        <th>Published values of S t and MESG</th>
+        <th>Column 0</th>
+        <th>Column 1</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>Ammonia</td>
+        <td>NaN</td>
+        <td>3.18</td>
+      </tr>
+      <tr>
+        <td>Methane</td>
+        <td>0.36</td>
+        <td>1.14</td>
+      </tr>
+      <tr>
+        <td>Acetone</td>
+        <td>0.43</td>
+        <td>1.04</td>
+      </tr>
+      <tr>
+        <td>Chloromethane</td>
+        <td>NaN</td>
+        <td>1.00</td>
+      </tr>
+      <tr>
+        <td>Vinyl Chloride</td>
+        <td>NaN</td>
+        <td>0.99</td>
+      </tr>
+      <tr>
+        <td>Cyclohexane</td>
+        <td>0.44</td>
+        <td>0.94</td>
+      </tr>
+      <tr>
+        <td>Methanol</td>
+        <td>0.50</td>
+        <td>0.92</td>
+      </tr>
+      <tr>
+        <td>Propane</td>
+        <td>0.37</td>
+        <td>0.92</td>
+      </tr>
+      <tr>
+        <td>Ethane</td>
+        <td>0.37</td>
+        <td>0.91</td>
+      </tr>
+      <tr>
+        <td>Ethanol</td>
+        <td>NaN</td>
+        <td>0.89</td>
+      </tr>
+      <tr>
+        <td>Diethyl Ether</td>
+        <td>0.48</td>
+        <td>0.87</td>
+    </tr>
+    <tr>
+        <td>Ethylene</td>
+        <td>0.76</td>
+        <td>0.65</td>
+      </tr>
+      <tr>
+        <td>Acetylene</td>
+        <td>1.50</td>
+        <td>0.37</td>
+      </tr>
+      <tr>
+        <td>Carobn Disulphide</td>
+        <td>0.59</td>
+        <td>0.34</td>
+      </tr>
+      <tr>
+        <td>Hydrogen</td>
+        <td>NaN</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        
+        <th>liquid vapour pressure</th>
+        <th>Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Acetaldehyde</td>
+        <td>120.000</td>
+      </tr>
+      <tr>
+        
+        
+        <td>Acetic acid</td>
+        <td>2.100</td>
+      </tr>
+      <tr>
+        
+        
+        <td>Acetic acid anhydride</td>
+        <td>0.680</td>
+      </tr>
+      <tr>
+        
+        
+        <td>Acetone</td>
+        <td>30.000</td>
+      </tr>
+      <tr>
+        
+        
+        <td>Allyl alcohol</td>
+        <td>2.300</td>
+      </tr>
+      <tr>
+        
+        
+        <td>Allyl chloride</td>
+        <td>40.000</td>
+      </tr>
+      <tr>
+        
+        
+        <td>Aluminum nitrate, 10 wt prcnt in water</td>
+        <td>2.400</td>
+      </tr>
+      <tr>
+        
+        
+        <td>Aluminum sulphate, 10 wt prcnt in water</td>
+        <td>2.400</td>
+      </tr>
+      <tr>
+        
+        
+        <td>Amyl acetate</td>
+        <td>0.470</td>
+      </tr>
+      <tr>
+        
+        
+        <td>Aniline</td>
+        <td>0.090</td>
+      </tr>
+      <tr>
+        <td>Beer</td>
+        <td>2.400</td>
+        <tr>
+        <td>Benzene</td>
+        <td>14.000</td>
+      </tr>
+      <tr>
+  
+        <td>Benzyl alcohol</td>
+        <td>0.013</td>
+      </tr>
+      <tr>
+  
+        <td>Bromine</td>
+        <td>28.000</td>
+      </tr>
+      <tr>
+  
+        <td>Butyl acetate</td>
+        <td>1.500</td>
+      </tr>
+      <tr>
+  
+        <td>Butyl alcohol, 1-butanol</td>
+        <td>0.930</td>
+      </tr>
+      <tr>
+  
+        <td>Butyric acid n</td>
+        <td>48.000</td>
+      </tr>
+      <tr>
+  
+        <td>Calcium chloride, 25 wt prcnt in water</td>
+        <td>2.400</td>
+      </tr>
+      <tr>
+  
+        <td>Calcium chloride, 5 wt prcnt in water</td>
+        <td>2.400</td>
+      </tr>
+      <tr>
+  
+        <td>Carbon disulphide</td>
+        <td>48.000</td>
+      </tr>
+      <tr>
+  
+        <td>Carbon tetrachloride</td>
+        <td>15.300</td>
+      </tr>
+      <tr>
+  
+        <td>Chloroform</td>
+        <td>26.000</td>
+      </tr>
+      <tr>
+  
+        <td>Cyclohexanol</td>
+        <td>0.900</td>
+      </tr>
+      <tr>
+  
+        <td>Cyclohexanone</td>
+        <td>0.670</td>
+      </tr>
+      <tr>
+  
+        <td>Ethyl acetate</td>
+        <td>14.000</td>
+      </tr>
+      <tr>
+  
+        <td>Ethyl alcohol</td>
+        <td>12.400</td>
+      </tr>
+      <tr>
+  
+        <td>Ethyl glycol</td>
+        <td>0.700</td>
+      </tr>
+      <tr>
+  
+        <td>Ethylene glycol</td>
+        <td>0.007</td>
+      </tr>
+      <tr>
+  
+        <td>Formic acid</td>
+        <td>5.700</td>
+      </tr>
+      <tr>
+  
+        <td>Furfurol, 2-Furaldehyde</td>
+        <td>0.300</td>
+      </tr>
+      <tr>
+  
+        <td>Heptane</td>
+        <td>6.000</td>
+      </tr>
+      <tr>
+  
+        <td>Hexane</td>
+        <td>17.600</td>
+      </tr>
+      <tr>
+  
+        <td>Isopropyl alcohol (rubbing alcohol)</td>
+        <td>4.400</td>
+      </tr>
+      <tr>
+  
+        <td>Kerosene</td>
+        <td>0.700</td>
+      </tr>
+      <tr>
+  
+        <td>Methyl acetate</td>
+        <td>28.800</td>
+      </tr>
+      <tr>
+  
+        <td>Methyl alcohol, methanol</td>
+        <td>16.900</td>
+      </tr>
+      <tr>
+  
+        <td>Methylene chloride, dichloromethane</td>
+        <td>58.000</td>
+      </tr>
+      <tr>
+  
+        <td>Milk</td>
+        <td>2.400</td>
+      </tr>
+      <tr>
+  
+        <td>Nitrobenzene</td>
+        <td>0.030</td>
+      </tr>
+      <tr>
+  
+        <td>Nonane</td>
+        <td>0.600</td>
+      </tr>
+      <tr>
+  
+        <td>Octane</td>
+        <td>1.900</td>
+      </tr>
+      <tr>
+  
+        <td>Pentane</td>
+        <td>58.000</td>
+      </tr>
+      <tr>
+  
+        <td>Phenol</td>
+        <td>0.050</td>
+      </tr>
+      <tr>
+  
+        <td>Propanol</td>
+        <td>2.800</td>
+      </tr>
+      <tr>
+  
+        <td>Propionic acid</td>
+        <td>0.470</td>
+      </tr>
+      <tr>
+  
+        <td>Sea water</td>
+        <td>2.400</td>
+      </tr>
+      <tr>
+  
+        <td>Sodium chloride, 25 wt prcnt in water</td>
+        <td>2.400</td>
+      </tr>
+      <tr>
+  
+        <td>Sodium hydroxide, 20 wt prcnt in water</td>
+        <td>2.400</td>
+      </tr>
+      <tr>
+  
+        <td>Sodium hydroxide, 30 wt prcnt in water</td>
+        <td>2.400</td>
+      </tr>
+      <tr>
+  
+        <td>Styrene</td>
+        <td>0.850</td>
+      </tr>
+      <tr>
+  
+        <td>Tetrachloroethane</td>
+        <td>0.700</td>
+      </tr>
+      <tr>
+  
+        <td>Tetrachloroethylene</td>
+        <td>2.500</td>
+      </tr>
+      <tr>
+  
+        <td>Toluene</td>
+        <td>3.800</td>
+      </tr>
+      <tr>
+  
+        <td>Trichloroethylene</td>
+        <td>9.200</td>
+      </tr>
+      <tr>
+  
+        <td>Water</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        
+        <th>Minimum ignition energy</th>
+        <th>Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>Coffee</td>
+        <td>85.0</td>
+      </tr>
+      <tr>
+        <td>Grain dust</td>
+        <td>55.0</td>
+      </tr>
+      <tr>
+        <td>Sugar</td>
+        <td>35.0</td>
+      </tr>
+      <tr>
+        <td>Wheat flour</td>
+        <td>50.0</td>
+      </tr>
+      <tr>
+        <td>Coal</td>
+        <td>55.0</td>
+      </tr>
+      <tr>
+        <td>Wood flouir</td>
+        <td>40.0</td>
+      </tr>
+      <tr>
+        <td>Nylon</td>
+        <td>20.0</td>
+      </tr>
+      <tr>
+        <td>Polyethylene</td>
+        <td>10.0</td>
+      </tr>
+      <tr>
+        <td>Polystyrene</td>
+        <td>15.0</td>
+      </tr>
+      <tr>
+        <td>Aluminium</td>
+        <td>15.0</td>
+      </tr>
+      <tr>
+        <td>Magnesium</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        
+        <th>hazardous area classification</th>
+        <th>Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>Zone 0</td>
+        <td>explosive gas-air mixtures are present continuously or present for long periods. Specify intrisically safe equipment</td>
+      </tr>
+      <tr>
+        <td>Zone1</td>
+        <td>explosive gas-air mixtures are likely to occcur in normal operation. Specify: insitrically safe equipment, or flame-proof enclosures with pressurizing and purging.</td>
+      </tr>
+      <tr>
+        <td>Zone 3</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        
+        <th>flashpoint boilingpoint NFPA Class</th>
+        <th>Column 0</th>
+        <th>Column 1</th>
+        <th>Column 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>Propane</td>
+        <td>105.0</td>
+        <td>42.0</td>
+        <td>IA</td>
+      </tr>
+      <tr>
+        <td>Pentane</td>
+        <td>49.0</td>
+        <td>36.0</td>
+        <td>IA</td>
+      </tr>
+      <tr>
+        <td>Ethyl ether</td>
+        <td>45.0</td>
+        <td>35.0</td>
+        <td>IA</td>
+      </tr>
+      <tr>
+        <td>Acetaldehyde</td>
+        <td>39.0</td>
+        <td>21.0</td>
+        <td>IA</td>
+      </tr>
+      <tr>
+        <td>Dimethyl sulfide</td>
+        <td>38.0</td>
+        <td>37.0</td>
+        <td>IA</td>
+      </tr>
+      <tr>
+        <td>Carbon disulfide</td>
+        <td>30.0</td>
+        <td>46.0</td>
+        <td>IB</td>
+      </tr>
+      <tr>
+        <td>Ethylene oxide</td>
+        <td>29.0</td>
+        <td>13.0</td>
+        <td>IA</td>
+      </tr>
+      <tr>
+        <td>n-Hexane</td>
+        <td>22.0</td>
+        <td>69.0</td>
+        <td>IB</td>
+      </tr>
+      <tr>
+        <td>Acetone</td>
+        <td>20.0</td>
+        <td>133.0</td>
+        <td>IA</td>
+      </tr>
+      <tr>
+        <td>Cyclohexane</td>
+        <td>20.0</td>
+        <td>81.0</td>
+        <td>IB</td>
+      </tr>
+      <tr>
+        <td>Tetrahydrofuran</td>
+        <td>14.0</td>
+        <td>67.0</td>
+        <td>IB</td>
+    <tr>
+        <td>Benzene</td>
+        <td>11.0</td>
+        <td>80.0</td>
+        <td>IB</td>
+      </tr>
+      <tr>
+        <td>Triethylamine</td>
+        <td>7.0</td>
+        <td>89.0</td>
+        <td>IB</td>
+      </tr>
+      <tr>
+        <td>Methyl ethyl ketone (MEK)</td>
+        <td>4.0</td>
+        <td>80.0</td>
+        <td>IB</td>
+      </tr>
+      <tr>
+        <td>Toluene</td>
+        <td>4.0</td>
+        <td>111.0</td>
+        <td>IB</td>
+      </tr>
+      <tr>
+        <td>Methyl alcohol</td>
+        <td>11.0</td>
+        <td>65.0</td>
+        <td>IB</td>
+      </tr>
+      <tr>
+        <td>Isopropyl alcohol (IPA)</td>
+        <td>12.0</td>
+        <td>82.0</td>
+        <td>IB</td>
+      </tr>
+      <tr>
+        <td>Ethyl alcohol</td>
+        <td>13.0</td>
+        <td>78.0</td>
+        <td>IB</td>
+      </tr>
+      <tr>
+        <td>Pyridine</td>
+        <td>20.0</td>
+        <td>116.0</td>
+        <td>IB</td>
+      </tr>
+      <tr>
+        <td>2-Nitropropane</td>
+        <td>24.0</td>
+        <td>120.0</td>
+        <td>IC</td>
+      </tr>
+      <tr>
+        <td>Tert butyl isocyanate</td>
+        <td>27.0</td>
+        <td>86.0</td>
+        <td>IC</td>
+      </tr>
+      <tr>
+        <td>Chlorobenzene</td>
+        <td>28.0</td>
+        <td>132.0</td>
+        <td>IC</td>
+      </tr>
+      <tr>
+        <td>Epichlorohydrin</td>
+        <td>31.0</td>
+        <td>116.0</td>
+        <td>IC</td>
+      </tr>
+      <tr>
+        <td>Xylene 27â€“32</td>
+        <td>138.0</td>
+        <td>144.0</td>
+        <td>IC</td>
+      </tr>
+      <tr>
+        <td>Morpholine</td>
+        <td>38.0</td>
+        <td>128.0</td>
+        <td>II</td>
+      </tr>
+      <tr>
+        <td>Acetic acid, glacial</td>
+        <td>39.0</td>
+        <td>48.0</td>
+        <td>II</td>
+      </tr>
+      <tr>
+        <td>Bromobenzene</td>
+        <td>48.0</td>
+        <td>155.0</td>
+        <td>II</td>
+      </tr>
+      <tr>
+        <td>Formic acid</td>
+        <td>50.0</td>
+        <td>101.0</td>
+        <td>II</td>
+      </tr>
+      <tr>
+        <td>Methyl lactate</td>
+        <td>57.0</td>
+        <td>144.0</td>
+        <td>II</td>
+      </tr>
+      <tr>
+        <td>Stoddard solvent</td>
+        <td>49.0</td>
+        <td>155.0</td>
+        <td>II</td>
+      </tr>
+      <tr>
+        <td>Iso-propyl lactate</td>
+        <td>60.0</td>
+        <td>157.0</td>
+        <td>II</td>
+      </tr>
+      <tr>
+        <td>Ethyl lactate</td>
+        <td>61.0</td>
+        <td>153.0</td>
+        <td>IIIA</td>
+      </tr>
+      <tr>
+        <td>Benzaldehyde</td>
+        <td>63.0</td>
+        <td>178.0</td>
+        <td>IIIA</td>
+      </tr>
+      <tr>
+        <td>Cyclohexanol</td>
+        <td>68.0</td>
+        <td>161.0</td>
+        <td>IIIA</td>
+      </tr>
+      <tr>
+        <td>Tetrahydronaphthalene</td>
+        <td>71.0</td>
+        <td>208.0</td>
+        <td>IIIA</td>
+      </tr>
+      <tr>
+        <td>Iso-butyl lactate</td>
+        <td>76.0</td>
+        <td>182.0</td>
+        <td>IIIB</td>
+      </tr>
+      <tr>
+        <td>Methacrylic acid</td>
+        <td>77.0</td>
+        <td>158.0</td>
+        <td>IIIA</td>
+      </tr>
+      <tr>
+        <td>Butyl lactate</td>
+        <td>79.0</td>
+        <td>187.0</td>
+        <td>IIIB</td>
+      </tr>
+      <tr>
+        <td>Nitrobenzene</td>
+        <td>88.0</td>
+        <td>211.0</td>
+        <td>IIIA</td>
+      </tr>
+      <tr>
+        <td>n-Methyl pyrrolidone</td>
+        <td>93.0</td>
+        <td>202.0</td>
+        <td>IIIA</td>
+      </tr>
+      <tr>
+        <td>Benzyl alcohol</td>
+        <td>101.0</td>
+        <td>205.0</td>
+        <td>IIIB</td>
+      </tr>
+      <tr>
+        <td>Caproic acid</td>
+        <td>102.0</td>
+        <td>204.0</td>
+        <td>IIIB</td>
+      </tr>
+      <tr>
+        <td>Ethylene glycol</td>
+        <td>111.0</td>
+        <td>198.0</td>
+        <td>IIIB</td>
+      </tr>
+      <tr>
+        <td>3-Ethyllhexyl lactate</td>
+        <td>113.0</td>
+        <td>246.0</td>
+        <td>IIIB</td>
+      </tr>
+      <tr>
+        <td>Phenyl ether</td>
+        <td>115.0</td>
+        <td>258.0</td>
+        <td>IIIB</td>
+      </tr>
+      <tr>
+        <td>Stearic acid</td>
+        <td>NaN</td>
+        <td>NaN</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>Layer Burning Behaviour Classification</th>
+        <th>Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>No ignition</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Brief ignition, rapid extintion</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Localised, minimal Spreading</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>No flame, slow spread</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Propagating flames or sparks</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        
+        <th>Material Factor data</th>
+        <th>Column 0</th>
+        <th>Column 1</th>
+        <th>Column 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>Acetaldehyde</td>
+        <td>24.0</td>
+        <td>39.0</td>
+        <td>24.4</td>
+      </tr>
+      <tr>
+        <td>Acetone</td>
+        <td>16.0</td>
+        <td>20.0</td>
+        <td>28.6</td>
+      </tr>
+      <tr>
+        <td>Acetylene</td>
+        <td>40.0</td>
+        <td>NaN</td>
+        <td>48.2</td>
+      </tr>
+      <tr>
+        <td>Ammonia</td>
+        <td>4.0</td>
+        <td>NaN</td>
+        <td>18.6</td>
+      </tr>
+      <tr>
+        <td>Benzene</td>
+        <td>16.0</td>
+        <td>11.0</td>
+        <td>40.2</td>
+      </tr>
+      <tr>
+        <td>Butane</td>
+        <td>21.0</td>
+        <td>NaN</td>
+        <td>45.8</td>
+      </tr>
+      <tr>
+        <td>Chlorine</td>
+        <td>1.0</td>
+        <td>NaN</td>
+        <td>0.0</td>
+      </tr>
+      <tr>
+        <td>Cyclohexane</td>
+        <td>16.0</td>
+        <td>20.0</td>
+        <td>43.5</td>
+      </tr>
+      <tr>
+        <td>Ethyl alcohol</td>
+        <td>16.0</td>
+        <td>13.0</td>
+        <td>26.8</td>
+      </tr>
+      <tr>
+        <td>Hydrogen</td>
+        <td>21.0</td>
+        <td>NaN</td>
+        <td>120.0</td>
+      </tr>
+      <tr>
+        <td>Nitroglycerine</td>
+        <td>40.0</td>
+        <td>NaN</td>
+        <td>18.2</td>
+    <tr>
+        <td>Sulphur</td>
+        <td>4.0</td>
+        <td>NaN</td>
+        <td>9.3</td>
+      </tr>
+      <tr>
+        <td>Toluene</td>
+        <td>16.0</td>
+        <td>40.0</td>
+        <td>31.3</td>
+      </tr>
+      <tr>
+        <td>Vinyl Chloride</td>
+        <td>NaN</td>
+        <td>NaN</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        
+        <th>Control Credit Factors Variables</th>
+        <th>Column 0</th>
+        <th>Column 1</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>emergency power</td>
+        <td>0.98</td>
+        <td>NaN</td>
+      </tr>
+      <tr>
+        <td>cooling</td>
+        <td>0.97</td>
+        <td>0.99</td>
+      </tr>
+      <tr>
+        <td>explosion control</td>
+        <td>0.84</td>
+        <td>0.98</td>
+      </tr>
+      <tr>
+        <td>emergency shutdown</td>
+        <td>0.96</td>
+        <td>0.99</td>
+      </tr>
+      <tr>
+        <td>computer control</td>
+        <td>0.93</td>
+        <td>0.99</td>
+      </tr>
+      <tr>
+        <td>inert gas</td>
+        <td>0.94</td>
+        <td>0.96</td>
+      </tr>
+      <tr>
+        <td>operating instructions</td>
+        <td>0.91</td>
+        <td>0.99</td>
+      </tr>
+      <tr>
+        <td>reactive chemical review</td>
+        <td>0.91</td>
+        <td>0.98</td>
+      </tr>
+      <tr>
+        <td>other hazards</td>
+        <td>0.91</td>
+        <td>0.98</td>
+      </tr>
+      <tr>
+        <td>remote control valves</td>
+        <td>0.96</td>
+        <td>0.98</td>
+      </tr>
+      <tr>
+        <td>dump blowdown</td>
+        <td>0.96</td>
+        <td>0.98</td>
+    <tr>
+        <td>drainage</td>
+        <td>0.91</td>
+        <td>0.97</td>
+      </tr>
+      <tr>
+        <td>interlock</td>
+        <td>0.98</td>
+        <td>NaN</td>
+      </tr>
+      <tr>
+        <td>leak detection</td>
+        <td>0.94</td>
+        <td>0.98</td>
+      </tr>
+      <tr>
+        <td>structural steel</td>
+        <td>0.95</td>
+        <td>0.98</td>
+      </tr>
+      <tr>
+        <td>fire water supply</td>
+        <td>0.94</td>
+        <td>0.97</td>
+      </tr>
+      <tr>
+        <td>special systems</td>
+        <td>0.91</td>
+        <td>NaN</td>
+      </tr>
+      <tr>
+        <td>sprinkler systems</td>
+        <td>0.74</td>
+        <td>0.97</td>
+      </tr>
+      <tr>
+        <td>water curtains</td>
+        <td>0.97</td>
+        <td>0.98</td>
+      </tr>
+      <tr>
+        <td>foam</td>
+        <td>0.92</td>
+        <td>0.97</td>
+      </tr>
+      <tr>
+        <td>hand extinguishers</td>
+        <td>0.93</td>
+        <td>0.98</td>
+      </tr>
+      <tr>
+        <td>cable protection</td>
+        <td>NaN</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        
+        <th>Safety Integrity Level</th>
+        <th>Column 0</th>
+        <th>Column 1</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>4</td>
+        <td>0.00001</td>
+        <td>0.0001</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>0.00010</td>
+        <td>0.0010</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>0.00100</td>
+        <td>0.0100</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>NaN</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        
+        <th>lethal dose50 PEL data</th>
+        <th>Column 0</th>
+        <th>Column 1</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>Carbon monoxide</td>
+        <td>50.0</td>
+        <td>1807.0</td>
+      </tr>
+      <tr>
+        <td>Carbon disulfide</td>
+        <td>20.0</td>
+        <td>3188.0</td>
+      </tr>
+      <tr>
+        <td>Chlorine</td>
+        <td>1.0</td>
+        <td>239.0</td>
+      </tr>
+      <tr>
+        <td>Chlorine dioxide</td>
+        <td>0.1</td>
+        <td>292.0</td>
+      </tr>
+      <tr>
+        <td>Chloroform</td>
+        <td>50.0</td>
+        <td>1188.0</td>
+      </tr>
+      <tr>
+        <td>Cyclohexane</td>
+        <td>300.0</td>
+        <td>NaN</td>
+      </tr>
+      <tr>
+        <td>Dioxane</td>
+        <td>100.0</td>
+        <td>4200.0</td>
+      </tr>
+      <tr>
+        <td>Ethylbenzene</td>
+        <td>100.0</td>
+        <td>3500.0</td>
+      </tr>
+      <tr>
+        <td>Formic acid</td>
+        <td>5.0</td>
+        <td>1100.0</td>
+      </tr>
+      <tr>
+        <td>Furfural</td>
+        <td>5.0</td>
+        <td>260.0</td>
+      </tr>
+      <tr>
+        <td>Hydrogen chloride</td>
+        <td>5.0</td>
+        <td>4701.0</td>
+    <tr>
+        <td>Hydrogen cyanide</td>
+        <td>10.0</td>
+        <td>3.7</td>
+      </tr>
+      <tr>
+        <td>Isopropyl alcohol</td>
+        <td>400.0</td>
+        <td>5045.0</td>
+      </tr>
+      <tr>
+        <td>Toluene</td>
+        <td>100.0</td>
+        <td>5000.0</td>
+      </tr>
+      <tr>
+        <td>Xylene</td>
+        <td>NaN</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <p> </p>
+  <table border="1" class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        
+        <th>Suggested rating scale for FMEA</th>
+        <th>Column 0</th>
+        <th>Column 1</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>1</td>
+        <td>Effect is insignificant</td>
+        <td>Failure is very unlikely,Current safeguards will always prevent failure mode</td>     
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Minor disruption, possible loss of production</td>
+        <td>Occasional failure possible</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Major disruption, possible damage to local equipment,Infrequent failure is likely</td>
+        <td>Low probability that current safeguard will detect or prevent</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>NaN</td>
+        <td>NaN</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <hr/>
+</div>
+{% endblock %}
