@@ -1,13 +1,13 @@
-# expertsystem-gh-pages
+# Expert System
 An application for data driven Hazop automation
 
-This software was developed to extend the functionality of the [expert system](https://github.com/harryhitchman/expertsystem), to make the static website dynamic and allow the user to edit information directly from the webpage.
+This software was developed to extend the functionality of the [expert system](https://github.com/harryhitchman/expertsystem), to make the static website dynamic and allow the user to edit information directly from the webpage. This was done for a summer research project described [here](Expert_System.pdf)
 ---
 ### New features include:
 1. **Explosions Hub** 
 This hub is used to inform the user regarding various design standards and suggest effective powder handling practices and design considerations in accordance with HSE and English standards and regulations. 
 
-![expert system](pic1.png)
+![expert system](README_pics/pic1.png)
 
 This Hub can be consulted by new personnel or unexperienced staff members when assessing the risk of their area of interest.
 1. **Tests Hub** 
@@ -19,7 +19,7 @@ The Simulations Hub’s functionality is complementary to the Tests Hub as once 
 1. **Web Crawler**
 The web crawler allows to access chemical property data of their substance of choice via the PubChem website
 
-![expert system](pic2.png)
+![expert system](README_pics/pic2.png)
 
 1. ** Event/Fault Tree**
 These functions can be found within the simulations hub and provide a HAZOP table related to the inserted risks and causes. This section was designed to be implemented at the end of the HAZOP study framework once the hazard has been rigorously investigated.
@@ -27,37 +27,37 @@ These functions can be found within the simulations hub and provide a HAZOP tabl
 ### Workflow
 If you launch the .exe file, the API will launch after a few seconds and as the connection is established also the Expert System UI will launch and run on your local host. However, if the first attempt from the web driver to connect will fail the web driver will launch again.
 
-![expert system](pic3.png)
+![expert system](README_pics/pic3.png)
 
 Once the web page is up you can click on the login button to log in (you can avoid including any date if you want the session to be recorded on the current date)
 
-![expert system](pic4.png)
+![expert system](README_pics/pic4.png)
 
 After logging in you will be able to access the previous Expert System functionality by clicking the Expert System icon on the top left
 
-![expert system](pic5.png)
+![expert system](README_pics/pic5.png)
 
 Once you entered the relevant information the HAZOP will be generated on the website
 
-![expert system](pic6.png)
+![expert system](README_pics/pic6.png)
 
 If you want to include some information that was not compiled into the HAZOP table, perhaps due to some limitations of the internal databank you can edit the sections on the chemicals to edit hub
 This can be found if you go to the Explosions page and then you can click here
 
-![expert system](pic7.png)
+![expert system](README_pics/pic7.png)
 
 The Hub will look like the following, and you can click on edit to change each section and save to load it onto the HTML file. However, if you Do not want to change the section any further you can press the top delete button to get rid of it
 
-![expert system](pic8.png)
+![expert system](README_pics/pic8.png)
 
 The purpose of the workflow is to obtain enough data about your system to enter the event tree framework and calculate an adequate HAZOP TABLE.
 The Event Tree function can be found in the simulations hub and the following inputs corresponds to the desired architectural structure:
 
-![expert system](pic9.png)
+![expert system](README_pics/pic9.png)
 
 An example of a fully defined architecture is given below:
 
-![expert system](pic10.png)
+![expert system](README_pics/pic10.png)
 
 This will define the paths and the architecture of the image used above. 
 To characterise the event tree, you can use each feature as shown on the table below
